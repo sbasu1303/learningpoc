@@ -228,3 +228,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+S3_BUCKET_NAME = "dev-datasocle"
+S3_ACCESS_KEY_ID = "AKIAJWYLDIGP3CKUREDA"
+S3_SECRECT_ACCESS_KEY = "Yl72/RAK28JOPvhIya+NwwOEjTbOdGKzOuYR3g4Y"
