@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'content_management',
     'rest_core',
+    'frontend',
 ]
 
 MIDDLEWARE = [
@@ -229,6 +230,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 S3_BUCKET_NAME = "dev-datasocle"
 S3_ACCESS_KEY_ID = "AKIAJWZLDIGP4CKUREDA"
