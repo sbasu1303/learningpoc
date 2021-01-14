@@ -22,4 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', views.show_index, name='home'),
     re_path(r'^index.html$', views.show_index, name='home'),
+    re_path(r'^courses.html$', views.show_courses, name='courses'),
+    re_path(r'^course-single-01.html$', views.show_course1, name='course1'),
+    re_path(r'^course-single-02.html$', views.show_course2, name='course2'),
 ]
