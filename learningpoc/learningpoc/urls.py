@@ -22,7 +22,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', views.show_index, name='home'),
     re_path(r'^index.html$', views.show_index, name='home'),
+    re_path(r'^login.html$', views.show_login, name='login'),
     re_path(r'^courses.html$', views.show_courses, name='courses'),
     re_path(r'^course-single-01.html$', views.show_course1, name='course1'),
     re_path(r'^course-single-02.html$', views.show_course2, name='course2'),
+    re_path(r'^instructors.html$', views.show_instructors, name='instructors'),
+    re_path(r'^instructor-single.html$', views.show_instructor1, name='instructor1'),
 ]
