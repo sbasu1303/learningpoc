@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'content_management',
+    'user_management',
     'rest_core',
     'frontend',
 ]
@@ -92,6 +93,12 @@ databasePort = '3306'
 if ENV != 'LOCAL':
     databaseHost = 'host.docker.internal'
 
+DATABASE_APPS_MAPPING = {
+    'content_management' : 'learning_course_db',
+    'user_management' : 'learning_course_db'
+}
+
+
 DATABASES = {
     'default':{
         'ENGINE': databaseEngine,
@@ -104,7 +111,20 @@ DATABASES = {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
             'connect_timeout': databaseConnectionTimeOut,
         }
+    },
+    'learning_course_db':{
+        'ENGINE': databaseEngine,
+        'NAME': 'learning_core',
+        'USER': 'lcore',
+        'PASSWORD': databasePassword,
+        'HOST': databaseHost,
+        'PORT': databasePort,
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+            'connect_timeout': databaseConnectionTimeOut,
+        }
     }
+
 }
 
 

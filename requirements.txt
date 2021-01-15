@@ -23,6 +23,10 @@ chardet==4.0.0
     # via
     #   -r requirements.txt
     #   requests
+click==7.1.2
+    # via
+    #   -r requirements.txt
+    #   pip-tools
 django-mysql==3.10.0
     # via -r requirements.txt
 django==3.1.5
@@ -41,13 +45,28 @@ idna==2.10
     # via
     #   -r requirements.txt
     #   requests
+isort==5.7.0
+    # via -r requirements.txt
 jmespath==0.10.0
     # via
     #   -r requirements.txt
     #   boto3
     #   botocore
+mysql-connector-python==8.0.22
+    # via -r requirements.txt
 mysqlclient==2.0.3
     # via -r requirements.txt
+pip-tools==5.5.0
+    # via -r requirements.txt
+protobuf3-to-dict==0.1.5
+    # via -r requirements.txt
+protobuf3==0.2.1
+    # via -r requirements.txt
+protobuf==3.14.0
+    # via
+    #   -r requirements.txt
+    #   mysql-connector-python
+    #   protobuf3-to-dict
 pydantic==1.7.3
     # via
     #   -r requirements.txt
@@ -73,6 +92,8 @@ six==1.15.0
     #   -r requirements.txt
     #   docker-py
     #   docker-pycreds
+    #   protobuf
+    #   protobuf3-to-dict
     #   python-dateutil
     #   websocket-client
 sqlparse==0.4.1
@@ -94,3 +115,6 @@ websocket-client==0.57.0
     # via
     #   -r requirements.txt
     #   docker-py
+
+# The following packages are considered to be unsafe in a requirements file:
+# pip
