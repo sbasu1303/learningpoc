@@ -1,9 +1,13 @@
 from django.shortcuts import render
-
+from frontend.utils import get_courses
 
 # Create your views here.
 
 def show_index(request, context=None):
+    items = get_courses()
+    context = {
+        "items" : items
+    }
     return render(request, 'index.html', context)
 
 def show_login(request, context=None):

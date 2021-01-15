@@ -218,7 +218,7 @@
 
 
 
-    <section class="banner-section banner-01 background-bg" data-image-src="static/frontend/images/banner/1.jpg">
+    <section class="banner-section banner-01 background-bg" data-image-src="static/frontend/images/banner/change.jpg">
         <div class="overlay">
             <div class="section-padding">
                 <div class="container">
@@ -241,7 +241,7 @@
                 <div class="top-content">
                     <div class="left-content float-left">
                         <h2 class="section-title">Popular courses</h2>
-                        <p>Donec rutrum congue leo eget malesuada</p>
+                        
                     </div><!-- /.left-content -->
 
                     <div class="owl-controls float-right"></div><!-- /.owl-controls -->
@@ -249,16 +249,17 @@
 
                 <div class="course-items with-slider">
                     <div id="course-slider" class="course-slider owl-carousel">
+                        {% for item in items %}
                         <div class="item">
                             <div class="item-thumb">
                                 <img src="static/frontend/images/popular/1.jpg" alt="Item Thumbnail">
                                 <div class="avatar"><img class="rounded-circle" src="static/frontend/images/avatar/1.png" alt="Avatar Image"></div><!-- /.avatar -->
                             </div><!-- /.item-thumb -->
                             <div class="item-details">
-                                <h3 class="item-title"><a href="course-single-01.html">Python Bootcamp: Go from zero to hero in Python</a></h3><!-- /.item-title -->
-                                <span class="instructor"><a href="#">Justin Marks</a></span><!-- /.instructor -->
+                                <h3 class="item-title"><a href="course-single-01.html">{{ item.name }}</a></h3><!-- /.item-title -->
+                                <span class="instructor"><a href="#">{{ item.instructor }}</a></span><!-- /.instructor -->
                                 <div class="details-bottom">
-                                    <div class="course-price float-left"><span class="currency">$</span><span class="price">15.99</span></div><!-- /.course-price -->
+                                    <div class="course-price float-left"><span class="currency">$</span><span class="price">{{ item.price }}</span></div><!-- /.course-price -->
                                     <div class="rating float-right">
                                         <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" data-fractions="2"/>
                                     </div><!-- /.rating -->
@@ -271,98 +272,7 @@
                                 </div><!-- /.item-meta -->
                             </div><!-- /.item-details -->
                         </div><!-- /.item -->
-
-                        <div class="item">
-                            <div class="item-thumb">
-                                <img src="static/frontend/images/popular/2.jpg" alt="Item Thumbnail">
-                                <div class="avatar"><img class="rounded-circle" src="static/frontend/images/avatar/2.png" alt="Avatar Image"></div><!-- /.avatar -->
-                            </div><!-- /.item-thumb -->
-                            <div class="item-details">
-                                <h3 class="item-title"><a href="course-single-01.html">The Complete Web Developer Bootcamp</a></h3><!-- /.item-title -->
-                                <span class="instructor"><a href="#">Justin Marks</a></span><!-- /.instructor -->
-                                <div class="details-bottom">
-                                    <div class="course-price float-left"><span class="currency">$</span><span class="price">15.99</span></div><!-- /.course-price -->
-                                    <div class="rating float-right">
-                                        <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" data-fractions="2"/>
-                                    </div><!-- /.rating -->
-                                </div><!-- /.details-bottom -->
-
-                                <div class="item-meta">
-                                    <span><i class="icons icon-people"></i> 129</span>
-                                    <span><i class="icons icon-clock"></i> 22Hrs</span>
-                                    <span><i class="icons icon-bubble"></i> 51</span>
-                                </div><!-- /.item-meta -->
-                            </div><!-- /.item-details -->
-                        </div><!-- /.item -->
-
-                        <div class="item">
-                            <div class="item-thumb">
-                                <img src="static/frontend/images/popular/3.jpg" alt="Item Thumbnail">
-                                <div class="avatar"><img class="rounded-circle" src="static/frontend/images/avatar/3.png" alt="Avatar Image"></div><!-- /.avatar -->
-                            </div><!-- /.item-thumb -->
-                            <div class="item-details">
-                                <h3 class="item-title"><a href="course-single-01.html">Complete Web Developer in 2018: Zero to Mastery</a></h3><!-- /.item-title -->
-                                <span class="instructor"><a href="#">Justin Marks</a></span><!-- /.instructor -->
-                                <div class="details-bottom">
-                                    <div class="course-price float-left"><span class="currency">$</span><span class="price">15.99</span></div><!-- /.course-price -->
-                                    <div class="rating float-right">
-                                        <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" data-fractions="2"/>
-                                    </div><!-- /.rating -->
-                                </div><!-- /.details-bottom -->
-
-                                <div class="item-meta">
-                                    <span><i class="icons icon-people"></i> 129</span>
-                                    <span><i class="icons icon-clock"></i> 22Hrs</span>
-                                    <span><i class="icons icon-bubble"></i> 51</span>
-                                </div><!-- /.item-meta -->
-                            </div><!-- /.item-details -->
-                        </div><!-- /.item -->
-
-                        <div class="item">
-                            <div class="item-thumb">
-                                <img src="static/frontend/images/popular/4.jpg" alt="Item Thumbnail">
-                                <div class="avatar"><img class="rounded-circle" src="static/frontend/images/avatar/4.png" alt="Avatar Image"></div><!-- /.avatar -->
-                            </div><!-- /.item-thumb -->
-                            <div class="item-details">
-                                <h3 class="item-title"><a href="course-single-01.html">Course On: Complete Java Masterclass</a></h3><!-- /.item-title -->
-                                <span class="instructor"><a href="#">Justin Marks</a></span><!-- /.instructor -->
-                                <div class="details-bottom">
-                                    <div class="course-price float-left"><span class="currency">$</span><span class="price">15.99</span></div><!-- /.course-price -->
-                                    <div class="rating float-right">
-                                        <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" data-fractions="2"/>
-                                    </div><!-- /.rating -->
-                                </div><!-- /.details-bottom -->
-
-                                <div class="item-meta">
-                                    <span><i class="icons icon-people"></i> 129</span>
-                                    <span><i class="icons icon-clock"></i> 22Hrs</span>
-                                    <span><i class="icons icon-bubble"></i> 51</span>
-                                </div><!-- /.item-meta -->
-                            </div><!-- /.item-details -->
-                        </div><!-- /.item -->
-
-                        <div class="item">
-                            <div class="item-thumb">
-                                <img src="static/frontend/images/popular/7.jpg" alt="Item Thumbnail">
-                                <div class="avatar"><img class="rounded-circle" src="static/frontend/images/avatar/1.png" alt="Avatar Image"></div><!-- /.avatar -->
-                            </div><!-- /.item-thumb -->
-                            <div class="item-details">
-                                <h3 class="item-title"><a href="course-single-01.html">Complete JavaScript Course 2018: Build Real Projects!</a></h3><!-- /.item-title -->
-                                <span class="instructor"><a href="#">Justin Marks</a></span><!-- /.instructor -->
-                                <div class="details-bottom">
-                                    <div class="course-price float-left"><span class="currency">$</span><span class="price">15.99</span></div><!-- /.course-price -->
-                                    <div class="rating float-right">
-                                        <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" data-fractions="2"/>
-                                    </div><!-- /.rating -->
-                                </div><!-- /.details-bottom -->
-
-                                <div class="item-meta">
-                                    <span><i class="icons icon-people"></i> 129</span>
-                                    <span><i class="icons icon-clock"></i> 22Hrs</span>
-                                    <span><i class="icons icon-bubble"></i> 51</span>
-                                </div><!-- /.item-meta -->
-                            </div><!-- /.item-details -->
-                        </div><!-- /.item -->
+                        {% endfor %}
                     </div><!-- /.course-slider -->
                 </div><!-- /.course-items -->
             </div><!-- /.container -->
