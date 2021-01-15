@@ -49,4 +49,8 @@ class LappUser(models.Model):
     def fullName(self):
         return str(self)
 
+    class Meta:
+        app_label = 'user_management'
+
+
 
