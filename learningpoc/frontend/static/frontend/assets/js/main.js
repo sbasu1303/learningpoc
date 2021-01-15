@@ -73,7 +73,7 @@
 
       		$(".course-slider").owlCarousel({
       			items:4,
-      			loop:true,
+      			loop:false,
       			nav: true,
       			margin:30,
       			autoplay: true,
