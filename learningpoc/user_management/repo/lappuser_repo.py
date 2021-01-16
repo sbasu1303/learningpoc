@@ -22,6 +22,13 @@ class LappUserRepo(DSRepo):
     @repomethod(LappUserMessage)
     def getById(self, lappuserId):
         return self._query().get(id=lappuserId)
+    
+    @repomethod(LappUserMessage)
+    def getByFullname(self,fullname):
+        names = fullname.split()
+        res = self._query().get(firstname = names[0], lastname = names[1])
+        print(res)
+        return res
 
     @repomethod(LappUserMessage)
     def getByEmailId(self, emailId):

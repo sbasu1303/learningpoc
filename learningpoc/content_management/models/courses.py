@@ -34,6 +34,7 @@ class Course(models.Model):
     approvedAt = models.DateTimeField(verbose_name="Course approval date time", null=True, blank=True)
     status = models.CharField(max_length=50, choices=COURSE_STATUS_CHOICE)
     quiz = models.JSONField(verbose_name="Quiz content with multi-choice with answers")
+    price = models.FloatField(null=False, blank=False, db_index= True)
 
     class Meta:
         app_label = 'content_management'

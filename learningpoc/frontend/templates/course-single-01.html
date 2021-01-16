@@ -208,13 +208,13 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        <h2 class="course-title">{{ courseName }}</h2><!-- /.course-title -->
+                        <h2 class="course-title">{{ course.courseName }}</h2><!-- /.course-title -->
                         <div class="course-meta">
                             <span class="meta-details">
                                 <img class="rounded-circle float-left" src="static/frontend/images/avatar/2.png" alt="Avatar">
 
                                 <span class="meta-id">Instructor</span>
-                                <a class="name" href="#">Alex Hilfisher</a>
+                                <a class="name" href="#">{{ course.author }}</a>
                             </span>
                         </div>
                         <video width="100%" src="static/frontend/vid.mov" controls></video>
@@ -230,7 +230,7 @@
                                     <h4 class="title">Course description</h4>
                                     <p>
                                         <strong>
-                                            {{ courseDescription }}
+                                            {{ course.courseDescription }}
                                         </strong>
                                     </p>
                                 </div>
@@ -242,8 +242,8 @@
                                         <div class="author-contents media">
                                             <div class="author-avatar float-left"><img class="radius" src="static/frontend/images/au.jpg" alt="Avatar"></div><!-- /.author-avatar -->
                                             <div class="author-details media-body">
-                                                <h3 class="name"><a href="#">Julia Adams</a></h3>
-                                                <span>UX Consultant and Web Design Instructor</span>
+                                                <h3 class="name"><a href="#">{{ author.firstname }} {{ author.lastname }}</a></h3>
+                                                <span>{{ author.qualification }}</span>
                                                 <p>
                                                     There was a painful and uncontrollable squeaking mixed in with it, the words could be made out at first but then there was a sort of echo which made them unclear, leaving the hearer unsure whether he had heard properly or not.
                                                 </p>

@@ -19,6 +19,10 @@ logger = logging.getLogger(__name__)
 class CourseRepo(DSRepo):
     def _query(self):
         return Course.objects.all()
+    
+    @repomethod(DSMessageList(CourseMessage))
+    def all(self):
+        return self._query()
 
     @repomethod(CourseMessage)
     def getById(self, courseId):
@@ -31,7 +35,7 @@ class CourseRepo(DSRepo):
             return course[0]
 
     @repomethod()
-    def updateOrCreate(self, course_name, course_description, content_hash='dummy', course_key= 'dummy', author=None,
+    def updateOrCreate(self, course_name, course_description, price, content_hash='dummy', course_key= 'dummy', author=None,
                        adminApprover=None, approvedAt=None, status='Active', quiz={}):
 
         course = self._query().filter(courseName=course_name)
@@ -47,7 +51,7 @@ class CourseRepo(DSRepo):
             course, created = Course.objects.update_or_create(courseName=course_name,courseDescription=course_description,
                                                               contentHash=content_hash,courseS3Key=course_key,
                                                               author=author,adminApprover=adminApprover,status=status,
-                                                              quiz=quiz)
+                                                              quiz=quiz,price = price)
 
             logger.info("updateOrCreate done for course_name: {}, created: {} ".format(course_name, created))
 
