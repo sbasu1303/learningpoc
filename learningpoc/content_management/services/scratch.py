@@ -9,7 +9,44 @@ luser=LappUser.objects.create(user=user,firstname='Vish',lastname='menon',emailI
                         zip_pin=100100, qualification='btech',status='Active',isInstractor=True)
 
 
-quiz = {'dummy':'dummy'}
+quiz =  [
+        {
+            "question" : "What is Apache ?",
+            "option1"  : "option1",
+            "option2"  : "option2",
+            "option3"  : "option3",
+            "answer"   : "option1"
+        },
+        {
+            "question" : "What is Python ?",
+            "option1"  : "option1",
+            "option2"  : "option2",
+            "option3"  : "option3",
+            "answer"   : "option2"
+        },
+        {
+            "question" : "What is Pyspark?",
+            "option1"  : "option1",
+            "option2"  : "option2",
+            "option3"  : "option3",
+            "answer"   : "option1"
+        },
+        {
+            "question" : "What is Spark ?",
+            "option1"  : "option1",
+            "option2"  : "option2",
+            "option3"  : "option3",
+            "answer"   : "option1"
+        },
+        {
+            "question" : "How is Apache streaming done ?",
+            "option1"  : "option1",
+            "option2"  : "option2",
+            "option3"  : "option3",
+            "answer"   : "option1"
+        }
+    ]
+    
 from content_management.services.course_service import courseService
 course=courseService.updateOrCreate('first course',
                                     'first course has a lot of description',

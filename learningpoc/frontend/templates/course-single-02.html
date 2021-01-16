@@ -228,8 +228,24 @@
                                 </span><!-- /.rating -->
                             </span>
                         </div>
-                        <img class="radius" src="static/frontend/images/single.jpg" alt="Course Image">
-
+                        <!-- <img class="radius" src="static/frontend/images/single.jpg" alt="Course Image"> -->
+                        <ol>
+                            
+                            <form method="post" action="/course-single-02.html">
+                                <fieldset>
+                                    {% for q in quiz %}
+                                    <legend>{{ q.question }}</legend>
+                                    <input type="radio" name= "{{forloop.counter}}" value="{{q.option1}}">{{q.option1}}<br>
+                                    <input type="radio" name= "{{forloop.counter}}" value="{{q.option2}}">{{q.option2}}<br>
+                                    <input type="radio" name= "{{forloop.counter}}" value="{{q.option3}}">{{q.option3}}<br>
+                                    <br>
+                                    {% endfor %}
+                                    <input type="submit" value="Submit now">
+                                </fieldset>
+                            </form>
+                            
+                            </ol>   
+                            
                         <div class="course-single-details">
                             <h4 class="title">Course description</h4>
                             <p>
