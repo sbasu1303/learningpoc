@@ -78,33 +78,6 @@
                                         <a class="dropdown-item" href="instructor-single.html">Instructor Single</a>
                                     </div>
                                 </li>
-
-                                <li class="nav-item menu-item-has-children dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="blog.html">Blog Posts</a>
-                                        <a class="dropdown-item" href="single.html">Blog single</a>
-                                    </div>
-                                </li>
-
-                                <li class="nav-item menu-item-has-children dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-                                    <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="404.html">404 Error</a>
-                                        <a class="dropdown-item" href="about.html">About</a>
-                                        <a class="dropdown-item" href="coming-soon.html">Coming Soon</a>
-                                        <a class="dropdown-item" href="contact.html">Contact</a>
-                                        <a class="dropdown-item" href="events.html">Events</a>
-                                        <a class="dropdown-item" href="event-details.html">Event Details</a>
-                                        <a class="dropdown-item" href="faq.html">FAQ</a>
-                                        <a class="dropdown-item" href="portfolio.html">Portfolio</a>
-                                        <a class="dropdown-item" href="portfolio-single.html">Portfolio Single</a>
-                                        <a class="dropdown-item" href="login.html">Login</a>
-                                        <a class="dropdown-item" href="register.html">Register</a>
-                                        <a class="dropdown-item" href="shop.html">Shop</a>
-                                        <a class="dropdown-item" href="shop-single.html">Shop Single</a>
-                                    </div>
-                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -208,31 +181,23 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        <h2 class="course-title">Photoshop for Web Design Beginners</h2><!-- /.course-title -->
+                        <h2 class="course-title">{{ course.courseName }}</h2><!-- /.course-title -->
                         <div class="course-meta">
                             <span class="meta-details">
                                 <img class="rounded-circle float-left" src="static/frontend/images/avatar/2.png" alt="Avatar">
 
                                 <span class="meta-id">Instructor</span>
-                                <a class="name" href="#">Alex Hilfisher</a>
+                                <a class="name" href="#">{{ course.author}}</a>
                             </span>
                             <span class="meta-details">
                                 <span class="meta-id">Category</span>
                                 <span>Design</span>
                             </span>
-                            <span class="meta-details">
-                                <span class="meta-id">Reviews</span>
-                                <span class="rating">
-                                    <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" value="4.5" data-fractions="5"/>
-                                    <span>(2,543 Ratings)</span>
-                                </span><!-- /.rating -->
-                            </span>
                         </div>
                         <!-- <img class="radius" src="static/frontend/images/single.jpg" alt="Course Image"> -->
                         <ol>
                             
-                            <form method="post" action="/course-single-02.html">
-                                <fieldset>
+                            <form id="quiz1" onsubmit="quiz()">{% csrf_token %}
                                     {% for q in quiz %}
                                     <legend>{{ q.question }}</legend>
                                     <input type="radio" name= "{{forloop.counter}}" value="{{q.option1}}">{{q.option1}}<br>
@@ -241,251 +206,12 @@
                                     <br>
                                     {% endfor %}
                                     <input type="submit" value="Submit now">
-                                </fieldset>
+                                    
                             </form>
                             
                             </ol>   
                             
-                        <div class="course-single-details">
-                            <h4 class="title">Course description</h4>
-                            <p>
-                                <strong>
-                                    The office assistant wasthe boss’s man,spineless, and with no understanding. What about if he reported sick? But that would be extremely strained and suspicious as in fifteen years of service Gregor had never once yet been ill
-                                </strong>
-                            </p>
-                            
-                            <p>
-                                His boss would certainly come round with the doctor from the medical insurance company, accuse his parents of having a lazy son, and accept the doctor’s recommendation not to make any claim as the doctor believed that no-one was ever ill but that many were workshy. And what’s more, would he have been entirely wrong in this case? Gregor did in fact, apart from excessive sleepiness after sleeping for so long, feel completely well and even felt much hungrier than usual.
-                            </p>
-                            
-                            <p>
-                                He was still hurriedly thinking all this through, unable to decide to get out of the bed, when the clock struck quarter to seven. There was a cautious knock at the door near his head. Gregor, somebody called – it was his mother – it’s quarter to seven. Didn’t you want to go somewhere? That gentle voice, Gregor was shocked when he heard his own voice answering, it could hardly be recognised as the voice he had had before
-                            </p>
-
-                            <h4 class="title">Curriculum for this Course</h4>
-                            <div class="curriculum-details">
-                                <div class="content-table">
-                                    <span class="title">Getting Started: Itroduction</span>
-                                    <ul class="content-list">
-                                        <li>
-                                            <span class="float-left"><a href="#"><i class="far fa-file"></i> Photoshop Interface - just the useful stuff!</a></span>
-                                            <span class="float-right">1.5MB</span>
-                                        </li>
-                                        <li>
-                                            <span class="float-left"><a href="#"><i class="fa fa-play-circle"></i> User interface explained</a></span>
-                                            <span class="float-right">8:31</span>
-                                        </li>
-                                    </ul>
-                                </div><!-- /.content-table -->
-
-                                <div class="content-table">
-                                    <span class="title">Paint Brush Tool</span>
-                                    <ul class="content-list">
-                                        <li>
-                                            <span class="float-left"><a href="#"><i class="far fa-file"></i> Photoshop Interface - just the useful stuff!</a></span>
-                                            <span class="float-right">1.5MB</span>
-                                        </li>
-                                        <li>
-                                            <span class="float-left"><a href="#"><i class="fa fa-play-circle"></i> User interface explained</a></span>
-                                            <span class="float-right">8:31</span>
-                                        </li>
-                                    </ul>
-                                </div><!-- /.content-table -->
-
-                                <div class="content-table">
-                                    <span class="title">Moving, Resizing & Zooming In</span>
-                                    <ul class="content-list">
-                                        <li>
-                                            <span class="float-left"><a href="#"><i class="far fa-file"></i> Photoshop Interface - just the useful stuff!</a></span>
-                                            <span class="float-right">1.5MB</span>
-                                        </li>
-                                        <li>
-                                            <span class="float-left"><a href="#"><i class="fa fa-play-circle"></i> User interface explained</a></span>
-                                            <span class="float-right">754kb</span>
-                                        </li>
-                                        <li>
-                                            <span class="float-left"><a href="#"><i class="fa fa-play-circle"></i> User interface explained</a></span>
-                                            <span class="float-right">8:31</span>
-                                        </li>
-                                    </ul>
-                                </div><!-- /.content-table -->
-                            </div><!-- /.curriculum-details -->
-
-                            <div class="author-bio">
-                                <h3 class="title">About the Instructor</h3>
-                                <div class="author-contents media">
-                                    <div class="author-avatar float-left"><img class="radius" src="static/frontend/images/au.jpg" alt="Avatar"></div><!-- /.author-avatar -->
-                                    <div class="author-details media-body">
-                                        <h3 class="name"><a href="#">Julia Adams</a></h3>
-                                        <span>UX Consultant and Web Design Instructor</span>
-                                        <p>
-                                            There was a painful and uncontrollable squeaking mixed in with it, the words could be made out at first but then there was a sort of echo which made them unclear, leaving the hearer unsure whether he had heard properly or not.
-                                        </p>
-                                        <a href="#" class="load-more">Learn more <i class="fa fa-angle-double-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <h3 class="title">Student Reviews</h3>
-
-                            <div class="course-reviews">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <div class="average-rating text-center">
-                                            <div class="rating">
-                                                <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" value="4.5" data-fractions="5"/>
-                                            </div><!-- /.rating -->
-                                            <span>Average Rating</span>
-                                        </div><!-- /.average-rating -->
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 54%" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <div class="rating-icons">
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <span class="rating-value">54%</span><!-- /.rating-value -->
-                                        </div><!-- /.rating-icons -->
-
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <div class="rating-icons">
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star-o"></i>
-                                            <span class="rating-value">30%</span><!-- /.rating-value -->
-                                        </div><!-- /.rating-icons -->
-
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <div class="rating-icons">
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star-o"></i>
-                                            <i class="far fa-star-o"></i>
-                                            <span class="rating-value">12%</span><!-- /.rating-value -->
-                                        </div><!-- /.rating-icons -->
-
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 3%" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <div class="rating-icons">
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star-o"></i>
-                                            <i class="far fa-star-o"></i>
-                                            <i class="far fa-star-o"></i>
-                                            <span class="rating-value">3%</span><!-- /.rating-value -->
-                                        </div><!-- /.rating-icons -->
-                                        
-                                        <div class="progress">
-                                            <div class="progress-bar" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <div class="rating-icons">
-                                            <i class="far fa-star"></i>
-                                            <i class="far fa-star-o"></i>
-                                            <i class="far fa-star-o"></i>
-                                            <i class="far fa-star-o"></i>
-                                            <i class="far fa-star-o"></i>
-                                            <span class="rating-value">1%</span><!-- /.rating-value -->
-                                        </div><!-- /.rating-icons -->
-                                    </div>
-                                </div>
-
-                                <div class="review-contents">
-                                    <ol class="review-list">
-                                        <li class="review">
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    <div class="media">
-                                                        <img class="rounded-circle author-avatar" src="static/frontend/images/comments/1.jpg" alt="RAvatar">
-                                                        <div class="author-details media-body">
-                                                            <span class="time">3 days ago</span>
-                                                            <h3 class="name"><a href="#">Cheryl Burns</a></h3><!-- /.name -->
-                                                        </div><!-- /.author-details -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <div class="review-details">
-                                                        <h3 class="title">Awesome Learning Site</h3><!-- /.title -->
-                                                        <div class="rating">
-                                                            <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" value="5" data-fractions="5"/>
-                                                        </div><!-- /.rating -->
-                                                        <p>
-                                                            Gregor had wanted to give a full answer and explain everything but in the circumstances contented himself with saying- I’m getting up now.
-                                                        </p>
-                                                    </div><!-- /.review-details -->
-                                                </div>
-                                            </div>
-                                        </li><!-- /.review -->
-
-                                        <li class="review">
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    <div class="media">
-                                                        <img class="rounded-circle author-avatar" src="static/frontend/images/comments/2.jpg" alt="RAvatar">
-                                                        <div class="author-details media-body">
-                                                            <span class="time">3 days ago</span>
-                                                            <h3 class="name"><a href="#">Bobby Newman</a></h3><!-- /.name -->
-                                                        </div><!-- /.author-details -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <div class="review-details">
-                                                        <h3 class="title">Great in-depth explanations</h3><!-- /.title -->
-                                                        <div class="rating">
-                                                            <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" value="5" data-fractions="5"/>
-                                                        </div><!-- /.rating -->
-                                                        <p> 
-                                                            The change in Gregor’s voice probably could not be noticed outside through the wooden door, as his mother was satisfied with this explanation and shuffled away
-                                                        </p>
-                                                    </div><!-- /.review-details -->
-                                                </div>
-                                            </div>
-                                        </li><!-- /.review -->
-
-                                        <li class="review">
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    <div class="media">
-                                                        <img class="rounded-circle author-avatar" src="static/frontend/images/comments/3.jpg" alt="RAvatar">
-                                                        <div class="author-details media-body">
-                                                            <span class="time">3 days ago</span>
-                                                            <h3 class="name"><a href="#">Philip Bell</a></h3><!-- /.name -->
-                                                        </div><!-- /.author-details -->
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-7">
-                                                    <div class="review-details">
-                                                        <h3 class="title">Really enjoyed this course</h3><!-- /.title -->
-                                                        <div class="rating">
-                                                            <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" value="5" data-fractions="5"/>
-                                                        </div><!-- /.rating -->
-                                                        <p>
-                                                            But this short conversation made the other members of the family aware that Gregor, against their expectations was still at home, and soon his father came knocking at one of the side doors gently but with his fist
-                                                        </p>
-                                                    </div><!-- /.review-details -->
-                                                </div>
-                                            </div>
-                                        </li><!-- /.review -->
-                                    </ol><!-- /.review-list -->
-                                </div><!-- /.review-contents -->
-                            </div>
-
-                            <div class="btn-container mt-4 text-center">
-                                <a href="#" class="btn btn-lg">Show more</a>
-                            </div><!-- /.btn-container -->
-                        </div><!-- /.course-single-details -->
-
+                        
 
                         <div class="related-courses">
                             <h2 class="section-title">Related Courses</h2>
@@ -688,11 +414,10 @@
 
 
 
-
-
     <script src="static/frontend/assets/js/jquery-3.3.1.min.js"></script>
     <script src="static/frontend/assets/js/plugins.js"></script>
     <script src="static/frontend/assets/js/main.js"></script>
+    <script src="static/frontend/assets/js/quiz.js"></script>
 
 
 </body>
