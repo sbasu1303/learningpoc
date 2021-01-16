@@ -2,6 +2,7 @@ from django.shortcuts import render
 from frontend.utils import get_courses
 from content_management.services.course_service import courseService
 from user_management.services.lappuser_service import lappUserService
+from django.http import HttpResponse
 import json
 
 # Create your views here.
@@ -34,16 +35,27 @@ def show_course1(request, context=None):
     return render(request, 'course-single-01.html', context)
 
 def show_course2(request, context=None):
-    c_name = "first course"
-    course = courseService.getByName(c_name)
-    print(type(course.quiz))
-    course.quiz = course.quiz.replace("'", '"')
-    course.quiz = json.loads(course.quiz)
-    context = {
-        "quiz" : course.quiz
+    if request.method == 'GET':
+        c_name = request.GET.get("name")
+        course = courseService.getByName(c_name)
+        print(type(course.quiz))
+        course.quiz = course.quiz.replace("'", '"')
+        course.quiz = json.loads(course.quiz)
+        context = {
+            "quiz" : course.quiz,
+            "course" : course
 
-    }
-    return render(request, 'course-single-02.html', context)
+        }
+        return render(request, 'course-single-02.html', context)
+    else:
+        return HttpResponse("Sorry account not found or password is invalid")
+
+def check_quiz(request, context=None):
+    pass
+    data = request.POST.get("form")
+    print(data)
+    return HttpResponse("Sorry account not found or password is invalid")
+
 
 def show_instructors(request, context=None):
     return render(request, 'instructors.html', context)
