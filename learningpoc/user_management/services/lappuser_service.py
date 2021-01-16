@@ -16,6 +16,10 @@ class LappUserService(DSServices):
         self.lappUserRepo = LappUserRepo()
 
     @servicemethod(LappUserMessage)
+    def getByfullname(self,fullname):
+        return self.lappUserRepo.getByFullname(fullname)
+
+    @servicemethod(LappUserMessage)
     def getById(self,courseId):
         return self.lappUserRepo.getById(courseId)
 
