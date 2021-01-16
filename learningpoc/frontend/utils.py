@@ -1,7 +1,7 @@
 def get_courses():
     items = [
         {
-            "name" : "course 1",
+            "name" : "first course",
             "instructor" : "test1",
             "price" : "10.00"
         },
