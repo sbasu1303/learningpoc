@@ -208,7 +208,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-8">
-                        <h2 class="course-title">Apache Streaming with Python and PySpark</h2><!-- /.course-title -->
+                        <h2 class="course-title">{{ courseName }}</h2><!-- /.course-title -->
                         <div class="course-meta">
                             <span class="meta-details">
                                 <img class="rounded-circle float-left" src="static/frontend/images/avatar/2.png" alt="Avatar">
@@ -216,26 +216,13 @@
                                 <span class="meta-id">Instructor</span>
                                 <a class="name" href="#">Alex Hilfisher</a>
                             </span>
-                            <span class="meta-details">
-                                <span class="meta-id">Category</span>
-                                <span>Design</span>
-                            </span>
-                            <span class="meta-details">
-                                <span class="meta-id">Reviews</span>
-                                <span class="rating">
-                                    <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" value="4.5" data-fractions="5"/>
-                                    <span>(2,543 Ratings)</span>
-                                </span><!-- /.rating -->
-                            </span>
                         </div>
-                        <img class="radius" src="static/frontend/images/single.jpg" alt="Course Image">
+                        <video width="100%" src="static/frontend/vid.mov" controls></video>
 
                         <div class="course-single-details">
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link active" id="nav-1" data-toggle="tab" href="#description" role="tab" aria-controls="description" aria-selected="true">Description</a>
-                                <a class="nav-item nav-link" id="nav-2" data-toggle="tab" href="#curriculum" role="tab" aria-controls="curriculum" aria-selected="false">Curriculum</a>
                                 <a class="nav-item nav-link" id="nav-3" data-toggle="tab" href="#instructor" role="tab" aria-controls="instructor" aria-selected="false">Instructor</a>
-                                <a class="nav-item nav-link" id="nav-4" data-toggle="tab" href="#reviews" role="tab" aria-controls="reviews" aria-selected="false">Reviews</a>
                             </div>
 
                             <div class="tab-content" id="nav-tabContent">
@@ -243,68 +230,11 @@
                                     <h4 class="title">Course description</h4>
                                     <p>
                                         <strong>
-                                            The office assistant wasthe boss’s man,spineless, and with no understanding. What about if he reported sick? But that would be extremely strained and suspicious as in fifteen years of service Gregor had never once yet been ill
+                                            {{ courseDescription }}
                                         </strong>
                                     </p>
-                                    
-                                    <p>
-                                        His boss would certainly come round with the doctor from the medical insurance company, accuse his parents of having a lazy son, and accept the doctor’s recommendation not to make any claim as the doctor believed that no-one was ever ill but that many were workshy. And what’s more, would he have been entirely wrong in this case? Gregor did in fact, apart from excessive sleepiness after sleeping for so long, feel completely well and even felt much hungrier than usual.
-                                    </p>
-                                    
-                                    <p>
-                                        He was still hurriedly thinking all this through, unable to decide to get out of the bed, when the clock struck quarter to seven. There was a cautious knock at the door near his head. Gregor, somebody called – it was his mother – it’s quarter to seven. Didn’t you want to go somewhere? That gentle voice, Gregor was shocked when he heard his own voice answering, it could hardly be recognised as the voice he had had before
-                                    </p>
                                 </div>
-                                <div class="tab-pane fade" id="curriculum" role="tabpanel" aria-labelledby="curriculum">
-                                    <h4 class="title">Curriculum for this Course</h4>
-                                    <div class="curriculum-details">
-                                        <div class="content-table">
-                                            <span class="title">Getting Started: Itroduction</span>
-                                            <ul class="content-list">
-                                                <li>
-                                                    <span class="float-left"><a href="#"><i class="far fa-file"></i> Photoshop Interface - just the useful stuff!</a></span>
-                                                    <span class="float-right">1.5MB</span>
-                                                </li>
-                                                <li>
-                                                    <span class="float-left"><a href="#"><i class="fa fa-play-circle"></i> User interface explained</a></span>
-                                                    <span class="float-right">8:31</span>
-                                                </li>
-                                            </ul>
-                                        </div><!-- /.content-table -->
-
-                                        <div class="content-table">
-                                            <span class="title">Paint Brush Tool</span>
-                                            <ul class="content-list">
-                                                <li>
-                                                    <span class="float-left"><a href="#"><i class="far fa-file"></i> Photoshop Interface - just the useful stuff!</a></span>
-                                                    <span class="float-right">1.5MB</span>
-                                                </li>
-                                                <li>
-                                                    <span class="float-left"><a href="#"><i class="fa fa-play-circle"></i> User interface explained</a></span>
-                                                    <span class="float-right">8:31</span>
-                                                </li>
-                                            </ul>
-                                        </div><!-- /.content-table -->
-
-                                        <div class="content-table">
-                                            <span class="title">Moving, Resizing & Zooming In</span>
-                                            <ul class="content-list">
-                                                <li>
-                                                    <span class="float-left"><a href="#"><i class="far fa-file"></i> Photoshop Interface - just the useful stuff!</a></span>
-                                                    <span class="float-right">1.5MB</span>
-                                                </li>
-                                                <li>
-                                                    <span class="float-left"><a href="#"><i class="fa fa-play-circle"></i> User interface explained</a></span>
-                                                    <span class="float-right">754kb</span>
-                                                </li>
-                                                <li>
-                                                    <span class="float-left"><a href="#"><i class="fa fa-play-circle"></i> User interface explained</a></span>
-                                                    <span class="float-right">8:31</span>
-                                                </li>
-                                            </ul>
-                                        </div><!-- /.content-table -->
-                                    </div><!-- /.curriculum-details -->
-                                </div>
+                               
 
                                 <div class="tab-pane fade" id="instructor" role="tabpanel" aria-labelledby="instructor">
                                     <div class="author-bio">
@@ -321,167 +251,6 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                
-                                <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews">
-                                    <h3 class="title">Student Reviews</h3>
-
-                                    <div class="course-reviews">
-                                        <div class="row">
-                                            <div class="col-lg-4">
-                                                <div class="average-rating text-center">
-                                                    <div class="rating">
-                                                        <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" value="4.5" data-fractions="5"/>
-                                                    </div><!-- /.rating -->
-                                                    <span>Average Rating</span>
-                                                </div><!-- /.average-rating -->
-                                            </div>
-                                            <div class="col-lg-8">
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" style="width: 54%" aria-valuenow="54" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <div class="rating-icons">
-                                                    <i class="far fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                    <span class="rating-value">54%</span><!-- /.rating-value -->
-                                                </div><!-- /.rating-icons -->
-
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <div class="rating-icons">
-                                                    <i class="far fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                    <i class="far fa-star-o"></i>
-                                                    <span class="rating-value">30%</span><!-- /.rating-value -->
-                                                </div><!-- /.rating-icons -->
-
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <div class="rating-icons">
-                                                    <i class="far fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                    <i class="far fa-star-o"></i>
-                                                    <i class="far fa-star-o"></i>
-                                                    <span class="rating-value">12%</span><!-- /.rating-value -->
-                                                </div><!-- /.rating-icons -->
-
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" style="width: 3%" aria-valuenow="3" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <div class="rating-icons">
-                                                    <i class="far fa-star"></i>
-                                                    <i class="far fa-star"></i>
-                                                    <i class="far fa-star-o"></i>
-                                                    <i class="far fa-star-o"></i>
-                                                    <i class="far fa-star-o"></i>
-                                                    <span class="rating-value">3%</span><!-- /.rating-value -->
-                                                </div><!-- /.rating-icons -->
-                                                
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" style="width: 1%" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
-                                                <div class="rating-icons">
-                                                    <i class="far fa-star"></i>
-                                                    <i class="far fa-star-o"></i>
-                                                    <i class="far fa-star-o"></i>
-                                                    <i class="far fa-star-o"></i>
-                                                    <i class="far fa-star-o"></i>
-                                                    <span class="rating-value">1%</span><!-- /.rating-value -->
-                                                </div><!-- /.rating-icons -->
-                                            </div>
-                                        </div>
-
-                                        <div class="review-contents">
-                                            <ol class="review-list">
-                                                <li class="review">
-                                                    <div class="row">
-                                                        <div class="col-md-5">
-                                                            <div class="media">
-                                                                <img class="rounded-circle author-avatar" src="static/frontend/images/comments/1.jpg" alt="RAvatar">
-                                                                <div class="author-details media-body">
-                                                                    <span class="time">3 days ago</span>
-                                                                    <h3 class="name"><a href="#">Cheryl Burns</a></h3><!-- /.name -->
-                                                                </div><!-- /.author-details -->
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-7">
-                                                            <div class="review-details">
-                                                                <h3 class="title">Awesome Learning Site</h3><!-- /.title -->
-                                                                <div class="rating">
-                                                                    <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" value="5" data-fractions="5"/>
-                                                                </div><!-- /.rating -->
-                                                                <p>
-                                                                    Gregor had wanted to give a full answer and explain everything but in the circumstances contented himself with saying- I’m getting up now.
-                                                                </p>
-                                                            </div><!-- /.review-details -->
-                                                        </div>
-                                                    </div>
-                                                </li><!-- /.review -->
-
-                                                <li class="review">
-                                                    <div class="row">
-                                                        <div class="col-md-5">
-                                                            <div class="media">
-                                                                <img class="rounded-circle author-avatar" src="static/frontend/images/comments/2.jpg" alt="RAvatar">
-                                                                <div class="author-details media-body">
-                                                                    <span class="time">3 days ago</span>
-                                                                    <h3 class="name"><a href="#">Bobby Newman</a></h3><!-- /.name -->
-                                                                </div><!-- /.author-details -->
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-7">
-                                                            <div class="review-details">
-                                                                <h3 class="title">Great in-depth explanations</h3><!-- /.title -->
-                                                                <div class="rating">
-                                                                    <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" value="5" data-fractions="5"/>
-                                                                </div><!-- /.rating -->
-                                                                <p> 
-                                                                    The change in Gregor’s voice probably could not be noticed outside through the wooden door, as his mother was satisfied with this explanation and shuffled away
-                                                                </p>
-                                                            </div><!-- /.review-details -->
-                                                        </div>
-                                                    </div>
-                                                </li><!-- /.review -->
-
-                                                <li class="review">
-                                                    <div class="row">
-                                                        <div class="col-md-5">
-                                                            <div class="media">
-                                                                <img class="rounded-circle author-avatar" src="static/frontend/images/comments/3.jpg" alt="RAvatar">
-                                                                <div class="author-details media-body">
-                                                                    <span class="time">3 days ago</span>
-                                                                    <h3 class="name"><a href="#">Philip Bell</a></h3><!-- /.name -->
-                                                                </div><!-- /.author-details -->
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-7">
-                                                            <div class="review-details">
-                                                                <h3 class="title">Really enjoyed this course</h3><!-- /.title -->
-                                                                <div class="rating">
-                                                                    <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" value="5" data-fractions="5"/>
-                                                                </div><!-- /.rating -->
-                                                                <p>
-                                                                    But this short conversation made the other members of the family aware that Gregor, against their expectations was still at home, and soon his father came knocking at one of the side doors gently but with his fist
-                                                                </p>
-                                                            </div><!-- /.review-details -->
-                                                        </div>
-                                                    </div>
-                                                </li><!-- /.review -->
-                                            </ol><!-- /.review-list -->
-                                        </div><!-- /.review-contents -->
-                                    </div>
-
-                                    <div class="btn-container mt-4 text-center">
-                                        <a href="#" class="btn btn-lg">Show more</a>
-                                    </div><!-- /.btn-container -->
                                 </div>
                             </div>
                         </div><!-- /.course-single-details -->
