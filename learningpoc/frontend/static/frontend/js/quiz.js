@@ -13,8 +13,11 @@ function getCookie(name) {
     }
     return cookieValue;
 }
-function quiz(){
-    var form = document.getElementById("quiz1");
+var form = document.getElementById("quiz1");
+form.onsubmit = function quiz(e){
+    e.preventDefault()
+
+    
     var collectedData = {
         'csrfmiddlewaretoken': getCookie('csrftoken'),
         'form' : FormData(form),

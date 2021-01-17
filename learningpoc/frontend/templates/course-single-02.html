@@ -2,7 +2,12 @@
 
 <html class="no-js" lang="en-US">
 
+    
+
 <head>
+
+    <!-- <script type="text/javascript" src="static/frontend/js/quiz.js"></script> -->
+
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>CourseWare - HTML5 Template By Jewel Theme</title>
@@ -200,17 +205,14 @@
                         <h4 class="course-title">Quiz</h4>
                         <ol>
                             
-                            <form id="quiz1" onsubmit="quiz()">{% csrf_token %}
+                            <form id="quiz1">{% csrf_token %}
                                     {% for q in quiz %}
-                                    
                                     <legend>{{ q.question }}</legend>
                                     <input type="radio" name= "{{forloop.counter}}" value="{{q.option1}}">{{q.option1}}<br><br>
                                     <input type="radio" name= "{{forloop.counter}}" value="{{q.option2}}">{{q.option2}}<br><br>
                                     <input type="radio" name= "{{forloop.counter}}" value="{{q.option3}}">{{q.option3}}<br><br>
-                                    <br>
                                     {% endfor %}
-                                    <input type="submit" value="Submit now">
-                                    
+                                    <input type="submit"><br>
                             </form>
                             
                         </ol>   
@@ -416,12 +418,29 @@
     </footer><!-- /.site-footer -->
 
 
-
-
     <script src="static/frontend/assets/js/jquery-3.3.1.min.js"></script>
     <script src="static/frontend/assets/js/plugins.js"></script>
     <script src="static/frontend/assets/js/main.js"></script>
-    <script src="static/frontend/assets/js/quiz.js"></script>
+
+ <script language="JavaScript">
+    $(document).ready(function() {
+        $('#quiz1').submit(function() { // catch the form's submit event
+            $.ajax({ // create an AJAX call...
+                data: $(this).serialize(), // get the form data
+                type: "POST", // GET or POST
+                url: "check-quiz", // the file to call
+                success: function(response) { // on success..
+                    console.log("success");
+                    alert("you have completed your quiz");
+                    $('#quiz1')[0].reset();
+                }
+            });
+            return false;
+        });
+    });
+</script>
+
+    
 
 
 </body>
