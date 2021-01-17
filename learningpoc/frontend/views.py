@@ -1,7 +1,8 @@
 from django.contrib.auth.models import User
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate, logout
 from django.shortcuts import render
 from frontend.utils import get_courses
+from crum import get_current_user
 from content_management.services.course_service import courseService
 from user_management.services.lappuser_service import lappUserService
 from django.http import HttpResponse
@@ -24,13 +25,23 @@ def show_login(request, context=None):
         return render(request, 'login.html', context)
 
     if request.method == 'POST':
+        #to be removed
+        logout(request)
+        ##
+
         username = request.POST.get('username', None)
         password = request.POST.get('password', None)
         user = None
         isPass = False
+
+        ##No user associated with the session
+        print(request.user)
+        ##
+
         try:
             user = User.objects.get(email=username)
             isPass = user.check_password(password)
+            u=authenticate(request,username=username, password=password)
         except:
             return HttpResponse("Sorry account not found or password is invalid")
 
@@ -39,6 +50,10 @@ def show_login(request, context=None):
             context = {
                 'last_name': user.last_name
             }
+            ##User is associated with the session
+            print(request.user.__dict__)
+            ##
+            
             return render(request, 'home.html', context)
         else:
             return HttpResponse("Sorry account not found or password is invalid")
