@@ -26,12 +26,12 @@ SECRET_KEY = '0q64@rexld=jujwi4i)$4w%ykp4nw)hvq$bqoeur3!wzo2s_^g'
 # SECURITY WARNING: don't run with debug turned on in production!
 ENV = os.environ.get('DS_ENV', None)
 if ENV == None and sys.platform == 'darwin':
-	ENV = 'LOCAL'
+    ENV = 'LOCAL'
 
 if ENV in ['LOCAL', 'DEV']:
-	DEBUG = True
+    DEBUG = True
 else:
-	DEBUG = False
+    DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -151,6 +151,14 @@ LOG_DIR = os.path.join(os.getenv('BASE_LOG_DIR'), 'ln_django')
 loglevel = 'DEBUG'
 if ENV == 'PROD':
     loglevel = 'INFO'
+
+
+# SECURITY WARNING: don't run with debug turned on in production!
+if ENV in ['LOCAL', 'DEV']:
+    DEBUG = True
+else:
+    DEBUG = False
+
 
 LOGGING = {
     'version': 1,
