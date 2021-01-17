@@ -199,21 +199,23 @@
                                 <span>Design</span>
                             </span>
                         </div>
+                        <!-- <div class="col-md-1"></div> -->
                         <!-- <img class="radius" src="static/frontend/images/single.jpg" alt="Course Image"> -->
+                        
+                        <h4 class="course-title">Quiz</h4>
                         <ol>
                             
                             <form id="quiz1">{% csrf_token %}
                                     {% for q in quiz %}
-                                    <legend>{{ q.question}}</legend>
-                                    <input type="radio" name= "{{forloop.counter}}" value="{{q.option1}}">{{q.option1}}<br>
-                                    <input type="radio" name= "{{forloop.counter}}" value="{{q.option2}}">{{q.option2}}<br>
-                                    <input type="radio" name= "{{forloop.counter}}" value="{{q.option3}}">{{ q.option3}}<br>
-                                    <br>
+                                    <legend>{{ q.question }}</legend>
+                                    <input type="radio" name= "{{forloop.counter}}" value="{{q.option1}}">{{q.option1}}<br><br>
+                                    <input type="radio" name= "{{forloop.counter}}" value="{{q.option2}}">{{q.option2}}<br><br>
+                                    <input type="radio" name= "{{forloop.counter}}" value="{{q.option3}}">{{q.option3}}<br><br>
                                     {% endfor %}
                                     <input type="submit"><br>
                             </form>
                             
-                            </ol>   
+                        </ol>   
                             
                         
 
