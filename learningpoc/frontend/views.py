@@ -38,7 +38,7 @@ def show_course2(request, context=None):
     if request.method == 'GET':
         c_name = request.GET.get("name")
         course = courseService.getByName(c_name)
-        print(type(course.quiz))
+        # print(type(course.quiz))
         course.quiz = course.quiz.replace("'", '"')
         course.quiz = json.loads(course.quiz)
         context = {
