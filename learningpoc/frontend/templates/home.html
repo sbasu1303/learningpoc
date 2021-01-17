@@ -52,6 +52,7 @@
                             <div class="contacts">
                                 <span><i class="fas fa-phone"></i> <a href="tel:61383766284">(+61) 38376 6284</a></span>
                                 <span><i class="fas fa-envelope"></i> <a href="#">support@courseware.com</a></span>
+                                <b> Welcome {{last_name}} </b>
                             </div>
                         </div>
                     </div>
@@ -169,9 +170,8 @@
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Courses</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="courses.html">All Courses</a>
-                                    {% for item in items%}
-                                    <a class="dropdown-item" href="course-single-01.html?name={{ item.courseName }}">{{ item.courseName }}</a>
-                                    {% endfor %}
+                                    <a class="dropdown-item" href="course-single-01.html">Course single 01</a>
+                                    <a class="dropdown-item" href="course-single-02.html">Course single 02</a>
                                 </div>
                             </li>
 
@@ -180,6 +180,33 @@
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="instructors.html">All Instructors</a>
                                     <a class="dropdown-item" href="instructor-single.html">Instructor Single</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item menu-item-has-children dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="blog.html">Blog Posts</a>
+                                    <a class="dropdown-item" href="single.html">Blog single</a>
+                                </div>
+                            </li>
+
+                            <li class="nav-item menu-item-has-children dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="404.html">404 Error</a>
+                                    <a class="dropdown-item" href="about.html">About</a>
+                                    <a class="dropdown-item" href="coming-soon.html">Coming Soon</a>
+                                    <a class="dropdown-item" href="contact.html">Contact</a>
+                                    <a class="dropdown-item" href="events.html">Events</a>
+                                    <a class="dropdown-item" href="event-details.html">Event Details</a>
+                                    <a class="dropdown-item" href="faq.html">FAQ</a>
+                                    <a class="dropdown-item" href="portfolio.html">Portfolio</a>
+                                    <a class="dropdown-item" href="portfolio-single.html">Portfolio Single</a>
+                                    <a class="dropdown-item" href="login.html">Login</a>
+                                    <a class="dropdown-item" href="register.html">Register</a>
+                                    <a class="dropdown-item" href="shop.html">Shop</a>
+                                    <a class="dropdown-item" href="shop-single.html">Shop Single</a>
                                 </div>
                             </li>
                         </ul>
@@ -192,7 +219,7 @@
 
 
 
-    <section class="banner-section banner-01 background-bg" data-image-src="static/frontend/images/banner/change.jpg">
+    <section class="banner-section banner-01 background-bg" data-image-src="static/frontend/images/banner/1.jpg">
         <div class="overlay">
             <div class="section-padding">
                 <div class="container">
@@ -215,25 +242,24 @@
                 <div class="top-content">
                     <div class="left-content float-left">
                         <h2 class="section-title">Popular courses</h2>
-                        
+                        <p>Donec rutrum congue leo eget malesuada</p>
                     </div><!-- /.left-content -->
 
-                    <!-- <div class="owl-controls float-right"></div>/.owl-controls -->
+                    <div class="owl-controls float-right"></div><!-- /.owl-controls -->
                 </div><!-- /.top-content -->
 
                 <div class="course-items with-slider">
                     <div id="course-slider" class="course-slider owl-carousel">
-                        {% for item in items %}
                         <div class="item">
                             <div class="item-thumb">
                                 <img src="static/frontend/images/popular/1.jpg" alt="Item Thumbnail">
                                 <div class="avatar"><img class="rounded-circle" src="static/frontend/images/avatar/1.png" alt="Avatar Image"></div><!-- /.avatar -->
                             </div><!-- /.item-thumb -->
                             <div class="item-details">
-                                <h3 class="item-title"><a href="course-single-01.html?name={{ item.courseName }}">{{ item.courseName }}</a></h3><!-- /.item-title -->
-                                <span class="instructor"><a href="#">test instructor</a></span><!-- /.instructor -->
+                                <h3 class="item-title"><a href="course-single-01.html">Python Bootcamp: Go from zero to hero in Python</a></h3><!-- /.item-title -->
+                                <span class="instructor"><a href="#">Justin Marks</a></span><!-- /.instructor -->
                                 <div class="details-bottom">
-                                    <div class="course-price float-left"><span class="currency">$</span><span class="price">{{ item.price }}</span></div><!-- /.course-price -->
+                                    <div class="course-price float-left"><span class="currency">$</span><span class="price">15.99</span></div><!-- /.course-price -->
                                     <div class="rating float-right">
                                         <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" data-fractions="2"/>
                                     </div><!-- /.rating -->
@@ -246,7 +272,98 @@
                                 </div><!-- /.item-meta -->
                             </div><!-- /.item-details -->
                         </div><!-- /.item -->
-                        {% endfor %}
+
+                        <div class="item">
+                            <div class="item-thumb">
+                                <img src="static/frontend/images/popular/2.jpg" alt="Item Thumbnail">
+                                <div class="avatar"><img class="rounded-circle" src="static/frontend/images/avatar/2.png" alt="Avatar Image"></div><!-- /.avatar -->
+                            </div><!-- /.item-thumb -->
+                            <div class="item-details">
+                                <h3 class="item-title"><a href="course-single-01.html">The Complete Web Developer Bootcamp</a></h3><!-- /.item-title -->
+                                <span class="instructor"><a href="#">Justin Marks</a></span><!-- /.instructor -->
+                                <div class="details-bottom">
+                                    <div class="course-price float-left"><span class="currency">$</span><span class="price">15.99</span></div><!-- /.course-price -->
+                                    <div class="rating float-right">
+                                        <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" data-fractions="2"/>
+                                    </div><!-- /.rating -->
+                                </div><!-- /.details-bottom -->
+
+                                <div class="item-meta">
+                                    <span><i class="icons icon-people"></i> 129</span>
+                                    <span><i class="icons icon-clock"></i> 22Hrs</span>
+                                    <span><i class="icons icon-bubble"></i> 51</span>
+                                </div><!-- /.item-meta -->
+                            </div><!-- /.item-details -->
+                        </div><!-- /.item -->
+
+                        <div class="item">
+                            <div class="item-thumb">
+                                <img src="static/frontend/images/popular/3.jpg" alt="Item Thumbnail">
+                                <div class="avatar"><img class="rounded-circle" src="static/frontend/images/avatar/3.png" alt="Avatar Image"></div><!-- /.avatar -->
+                            </div><!-- /.item-thumb -->
+                            <div class="item-details">
+                                <h3 class="item-title"><a href="course-single-01.html">Complete Web Developer in 2018: Zero to Mastery</a></h3><!-- /.item-title -->
+                                <span class="instructor"><a href="#">Justin Marks</a></span><!-- /.instructor -->
+                                <div class="details-bottom">
+                                    <div class="course-price float-left"><span class="currency">$</span><span class="price">15.99</span></div><!-- /.course-price -->
+                                    <div class="rating float-right">
+                                        <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" data-fractions="2"/>
+                                    </div><!-- /.rating -->
+                                </div><!-- /.details-bottom -->
+
+                                <div class="item-meta">
+                                    <span><i class="icons icon-people"></i> 129</span>
+                                    <span><i class="icons icon-clock"></i> 22Hrs</span>
+                                    <span><i class="icons icon-bubble"></i> 51</span>
+                                </div><!-- /.item-meta -->
+                            </div><!-- /.item-details -->
+                        </div><!-- /.item -->
+
+                        <div class="item">
+                            <div class="item-thumb">
+                                <img src="static/frontend/images/popular/4.jpg" alt="Item Thumbnail">
+                                <div class="avatar"><img class="rounded-circle" src="static/frontend/images/avatar/4.png" alt="Avatar Image"></div><!-- /.avatar -->
+                            </div><!-- /.item-thumb -->
+                            <div class="item-details">
+                                <h3 class="item-title"><a href="course-single-01.html">Course On: Complete Java Masterclass</a></h3><!-- /.item-title -->
+                                <span class="instructor"><a href="#">Justin Marks</a></span><!-- /.instructor -->
+                                <div class="details-bottom">
+                                    <div class="course-price float-left"><span class="currency">$</span><span class="price">15.99</span></div><!-- /.course-price -->
+                                    <div class="rating float-right">
+                                        <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" data-fractions="2"/>
+                                    </div><!-- /.rating -->
+                                </div><!-- /.details-bottom -->
+
+                                <div class="item-meta">
+                                    <span><i class="icons icon-people"></i> 129</span>
+                                    <span><i class="icons icon-clock"></i> 22Hrs</span>
+                                    <span><i class="icons icon-bubble"></i> 51</span>
+                                </div><!-- /.item-meta -->
+                            </div><!-- /.item-details -->
+                        </div><!-- /.item -->
+
+                        <div class="item">
+                            <div class="item-thumb">
+                                <img src="static/frontend/images/popular/7.jpg" alt="Item Thumbnail">
+                                <div class="avatar"><img class="rounded-circle" src="static/frontend/images/avatar/1.png" alt="Avatar Image"></div><!-- /.avatar -->
+                            </div><!-- /.item-thumb -->
+                            <div class="item-details">
+                                <h3 class="item-title"><a href="course-single-01.html">Complete JavaScript Course 2018: Build Real Projects!</a></h3><!-- /.item-title -->
+                                <span class="instructor"><a href="#">Justin Marks</a></span><!-- /.instructor -->
+                                <div class="details-bottom">
+                                    <div class="course-price float-left"><span class="currency">$</span><span class="price">15.99</span></div><!-- /.course-price -->
+                                    <div class="rating float-right">
+                                        <input type="hidden" class="rating-tooltip-manual" data-filled="fas fa-star" data-empty="far fa-star" data-fractions="2"/>
+                                    </div><!-- /.rating -->
+                                </div><!-- /.details-bottom -->
+
+                                <div class="item-meta">
+                                    <span><i class="icons icon-people"></i> 129</span>
+                                    <span><i class="icons icon-clock"></i> 22Hrs</span>
+                                    <span><i class="icons icon-bubble"></i> 51</span>
+                                </div><!-- /.item-meta -->
+                            </div><!-- /.item-details -->
+                        </div><!-- /.item -->
                     </div><!-- /.course-slider -->
                 </div><!-- /.course-items -->
             </div><!-- /.container -->
@@ -446,10 +563,114 @@
 
 
 
-    
+    <section class="events">
+        <div class="section-padding">
+            <div class="container">
+                <div class="top-content">
+                    <div class="left-content float-left">
+                        <h2 class="section-title">Events</h2>
+                        <p>Donec rutrum congue leo eget malesuada</p>
+                    </div><!-- /.left-content -->
+                    <div class="right-content float-right"><a href="#" class="btn">View all</a></div><!-- /.right-content -->
+                </div><!-- /.top-content -->
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="event media">
+                            <div class="event-time">
+                                <time datetime="2017-07-28"><span class="date">28</span> July</time>
+                            </div>
+                            <div class="event-details media-body">
+                                <div class="event-thumb radius"><img src="static/frontend/images/event/1.jpg" alt="Event Thumbnail"></div><!-- /.enent-thumb -->
+                                <h2 class="event-title"><a href="event-details.html">Expand Your Programming Knowledge</a></h2><!-- /.event-title -->
+                                <div class="event-meta">
+                                    <span class="time"><i class="icon-clock"></i> 4am - 8pm</span><!-- /.time -->
+                                    <span class="place"><i class="icon-location-pin"></i> New York, USA</span><!-- /.place -->
+                                </div><!-- /.event-meta -->
+                                <p>
+                                    One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.
+                                </p>
+                            </div><!-- /.event-details -->
+                        </div><!-- /.event -->
+                    </div>
+                    <div class="col-md-6">
+                        <div class="event media">
+                            <div class="event-time">
+                                <time datetime="2017-07-28"><span class="date">28</span> July</time>
+                            </div>
+                            <div class="event-details media-body">
+                                <div class="event-thumb radius"><img src="static/frontend/images/event/2.jpg" alt="Event Thumbnail"></div><!-- /.enent-thumb -->
+                                <h2 class="event-title"><a href="event-details.html">Land an Exciting New Tech Job</a></h2><!-- /.event-title -->
+                                <div class="event-meta">
+                                    <span class="time"><i class="icon-clock"></i> 4am - 8pm</span><!-- /.time -->
+                                    <span class="place"><i class="icon-location-pin"></i> New York, USA</span><!-- /.place -->
+                                </div><!-- /.event-meta -->
+                                <p>
+                                    He lay on his armour back and lifted his head a little that he could see his brown belly, slightly domed and divided by into sections. 
+                                </p>
+                            </div><!-- /.event-details -->
+                        </div><!-- /.event -->
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.section-padding -->
+    </section>
 
 
-    
+
+    <section class="recent-posts black-bg">
+        <div class="section-padding">
+            <div class="container">
+                <div class="top-content">
+                    <div class="left-content float-left">
+                        <h2 class="section-title">Recent Blog Posts</h2>
+                        <p>Donec rutrum congue leo eget malesuada</p>
+                    </div><!-- /.left-content -->
+                    <div class="owl-controls float-right"></div><!-- /.owl-controls -->
+                </div><!-- /.top-content -->
+
+                <div id="post-slider" class="post-slider owl-carousel">
+                    <div class="item">
+                        <article class="post">
+                            <div class="entry-thumbnail radius"><img src="static/frontend/images/posts/1.jpg" alt="Post Thumbnail"></div><!-- /.entry-thumbnail -->
+                            <div class="entry-content">
+                                <h3 class="entry-title"><a href="single.html">WordPress Theme Development Resources</a></h3><!-- /.entry-title -->
+                                <div class="entry-meta">
+                                    <span class="author"><i class="icon-user"></i> <a href="#">Anthony Doe</a></span><!-- /.author -->
+                                    <span class="time"><i class="icon-calendar"></i> 26/05/2018</span><!-- /.time -->
+                                </div><!-- /.entry-meta -->
+                            </div><!-- /.entry-content -->
+                        </article><!-- /.post -->
+                    </div>
+                    <div class="item">
+                        <article class="post">
+                            <div class="entry-thumbnail radius"><img src="static/frontend/images/posts/2.jpg" alt="Post Thumbnail"></div><!-- /.entry-thumbnail -->
+                            <div class="entry-content">
+                                <h3 class="entry-title"><a href="single.html">ow To Create A Local Business Directory Site In WordPress</a></h3><!-- /.entry-title -->
+                                <div class="entry-meta">
+                                    <span class="author"><i class="icon-user"></i> <a href="#">Anthony Doe</a></span><!-- /.author -->
+                                    <span class="time"><i class="icon-calendar"></i> 26/05/2018</span><!-- /.time -->
+                                </div><!-- /.entry-meta -->
+                            </div><!-- /.entry-content -->
+                        </article><!-- /.post -->
+                    </div>
+                    <div class="item">
+                        <article class="post">
+                            <div class="entry-thumbnail radius"><img src="static/frontend/images/posts/3.jpg" alt="Post Thumbnail"></div><!-- /.entry-thumbnail -->
+                            <div class="entry-content">
+                                <h3 class="entry-title"><a href="single.html">How To Tell If A Site Is WordPress Or Not</a></h3><!-- /.entry-title -->
+                                <div class="entry-meta">
+                                    <span class="author"><i class="icon-user"></i> <a href="#">Anthony Doe</a></span><!-- /.author -->
+                                    <span class="time"><i class="icon-calendar"></i> 26/05/2018</span><!-- /.time -->
+                                </div><!-- /.entry-meta -->
+                            </div><!-- /.entry-content -->
+                        </article><!-- /.post -->
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </div><!-- /.section-padding -->
+    </section><!-- /.recent-posts -->
+
 
 
 

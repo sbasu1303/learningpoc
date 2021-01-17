@@ -1,3 +1,5 @@
+from django.contrib.auth.models import User
+from django.contrib.auth import login
 from django.shortcuts import render
 from frontend.utils import get_courses
 from content_management.services.course_service import courseService
@@ -14,8 +16,32 @@ def show_index(request, context=None):
     }
     return render(request, 'index.html', context)
 
+def show_home(request, context=None):
+    return render(request, 'home.html', context)
+
 def show_login(request, context=None):
-    return render(request, 'login.html', context)
+    if request.method == 'GET':
+        return render(request, 'login.html', context)
+
+    if request.method == 'POST':
+        username = request.POST.get('username', None)
+        password = request.POST.get('password', None)
+        user = None
+        isPass = False
+        try:
+            user = User.objects.get(email=username)
+            isPass = user.check_password(password)
+        except:
+            return HttpResponse("Sorry account not found or password is invalid")
+
+        if user is not None and isPass:
+            login(request, user)
+            context = {
+                'last_name': user.last_name
+            }
+            return render(request, 'home.html', context)
+        else:
+            return HttpResponse("Sorry account not found or password is invalid")
 
 def show_courses(request, context=None):
     items = courseService.getall()

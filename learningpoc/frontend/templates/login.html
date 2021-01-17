@@ -2,6 +2,8 @@
 
 <html class="no-js" lang="en-US">
 
+<script src="/static/frontend/js/login.js"></script>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -231,7 +233,8 @@
                         </p>
 
                         <p class="form-input">
-                            <input type="submit" name="wp-submit" id="wp-submit" class="btn" value="Sign In">
+                            <input type="button" name="wp-submit" id="wp-submit" class="btn" value="Sign In" onclick="login()">
+                            {% csrf_token %}
                         </p>
                         
                     </form>
