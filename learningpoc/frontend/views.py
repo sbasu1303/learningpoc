@@ -52,7 +52,7 @@ def show_course2(request, context=None):
 
 def check_quiz(request, context=None):
     pass
-    data = request.POST.get("form")
+    data = request.POST
     print(data)
     return HttpResponse("Sorry account not found or password is invalid")
 
