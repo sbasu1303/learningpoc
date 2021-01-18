@@ -26,7 +26,7 @@ urlpatterns = [
     re_path(r'^courses.html$', views.show_courses, name='courses'),
     re_path(r'^course-single-01.html$', views.show_course1, name='course1'),
     re_path(r'^course-single-02.html$', views.show_course2, name='course2'),
-    re_path(r'^check-quiz$', views.check_quiz, name='quiz'),
+    # re_path(r'^check-quiz$', views.check_quiz, name='quiz'),
     re_path(r'^instructors.html$', views.show_instructors, name='instructors'),
     re_path(r'^instructor-single.html$', views.show_instructor1, name='instructor1'),
 ]
