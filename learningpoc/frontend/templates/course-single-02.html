@@ -5,6 +5,8 @@
     
 
 <head>
+    {{ quiz|json_script:"mydata" }}
+
 
     <!-- <script type="text/javascript" src="static/frontend/js/quiz.js"></script> -->
 
@@ -38,6 +40,7 @@
 
     <link rel="stylesheet" href="static/frontend/assets/css/style.css">
     <link rel="stylesheet" href="static/frontend/assets/css/responsive.css">
+    <link rel="stylesheet" href="static/frontend/assets/css/quiz.css">
 
 
 </head>
@@ -202,22 +205,21 @@
                         <!-- <div class="col-md-1"></div> -->
                         <!-- <img class="radius" src="static/frontend/images/single.jpg" alt="Course Image"> -->
                         
+                        <!-- <form id="quiz1">{% csrf_token %}
+                            {% for q in quiz %}
+                            <legend>{{ q.question }}</legend>
+                            <input type="radio" name= "{{forloop.counter}}" value="{{q.option1}}">{{q.option1}}<br><br>
+                            <input type="radio" name= "{{forloop.counter}}" value="{{q.option2}}">{{q.option2}}<br><br>
+                            <input type="radio" name= "{{forloop.counter}}" value="{{q.option3}}">{{q.option3}}<br><br>
+                            {% endfor %}
+                            <input type="submit"><br>
+                        </form> -->
+
                         <h4 class="course-title">Quiz</h4>
-                        <ol>
+                        <div id="quiz"></div>
+                        <button id="submit">Submit Quiz</button>
+                        <div id="results"></div>
                             
-                            <form id="quiz1">{% csrf_token %}
-                                    {% for q in quiz %}
-                                    <legend>{{ q.question }}</legend>
-                                    <input type="radio" name= "{{forloop.counter}}" value="{{q.option1}}">{{q.option1}}<br><br>
-                                    <input type="radio" name= "{{forloop.counter}}" value="{{q.option2}}">{{q.option2}}<br><br>
-                                    <input type="radio" name= "{{forloop.counter}}" value="{{q.option3}}">{{q.option3}}<br><br>
-                                    {% endfor %}
-                                    <input type="submit"><br>
-                            </form>
-                            
-                        </ol>   
-                            
-                        
 
                         <div class="related-courses">
                             <h2 class="section-title">Related Courses</h2>
@@ -417,12 +419,12 @@
         </div><!-- /.footer-bottom -->
     </footer><!-- /.site-footer -->
 
-
     <script src="static/frontend/assets/js/jquery-3.3.1.min.js"></script>
     <script src="static/frontend/assets/js/plugins.js"></script>
     <script src="static/frontend/assets/js/main.js"></script>
+    <script src="static/frontend/assets/js/quiz.js"></script>
 
- <script language="JavaScript">
+ <!-- <script language="JavaScript">
     $(document).ready(function() {
         $('#quiz1').submit(function() { // catch the form's submit event
             $.ajax({ // create an AJAX call...
@@ -431,14 +433,14 @@
                 url: "check-quiz", // the file to call
                 success: function(response) { // on success..
                     console.log("success");
-                    alert("you have completed your quiz");
+                    alert("you have completed your ****** quiz");
                     $('#quiz1')[0].reset();
                 }
             });
             return false;
         });
     });
-</script>
+</script> -->
 
     
 
