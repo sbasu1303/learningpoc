@@ -10,41 +10,34 @@ luser=LappUser.objects.create(user=user,firstname='Mak',lastname='menon',emailId
 
 
 quiz =  [
-        {
-            "question" : "What is Apache ?",
-            "option1"  : "option1",
-            "option2"  : "option2",
-            "option3"  : "option3",
-            "answer"   : "option1"
+      {
+        "question": "Who invented JavaScript?",
+        "answers": {
+          "a": "Douglas Crockford",
+          "b": "Sheryl Sandberg",
+          "c": "Brendan Eich"
         },
-        {
-            "question" : "What is Python ?",
-            "option1"  : "option1",
-            "option2"  : "option2",
-            "option3"  : "option3",
-            "answer"   : "option2"
+        "correctAnswer": "c"
+      },
+      {
+        "question": "Which one of these is a JavaScript package manager?",
+        "answers": {
+          "a": "Node.js",
+          "b": "TypeScript",
+          "c": "npm"
         },
-        {
-            "question" : "What is Pyspark?",
-            "option1"  : "option1",
-            "option2"  : "option2",
-            "option3"  : "option3",
-            "answer"   : "option1"
+        "correctAnswer": "c"
+      },
+      {
+        "question": "Which tool can you use to ensure code quality?",
+        "answers": {
+          "a": "Angular",
+          "b": "jQuery",
+          "c": "RequireJS",
+          "d": "ESLint"
         },
-        {
-            "question" : "What is Spark ?",
-            "option1"  : "option1",
-            "option2"  : "option2",
-            "option3"  : "option3",
-            "answer"   : "option1"
-        },
-        {
-            "question" : "How is Apache streaming done ?",
-            "option1"  : "option1",
-            "option2"  : "option2",
-            "option3"  : "option3",
-            "answer"   : "option1"
-        }
+        "correctAnswer": "d"
+      }
     ]
     
 from content_management.services.course_service import courseService

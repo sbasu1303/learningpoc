@@ -91,11 +91,16 @@ def show_course2(request, context=None):
     else:
         return HttpResponse("Sorry account not found or password is invalid")
 
-def check_quiz(request, context=None):
-    pass
-    data = request.POST
-    print(data)
-    return HttpResponse("Sorry account not found or password is invalid")
+# def check_quiz(request, context=None):
+#         c_name = request.GET.get("name")
+#         course = courseService.getByName(c_name)
+#         course.quiz = course.quiz.replace("'",'"')
+#         course.quiz = json.loads(course.quiz)
+#         context = {
+#             "quiz" : course.quiz,
+#             "course" : course
+#         }
+#         return 
 
 
 def show_instructors(request, context=None):
