@@ -34,6 +34,10 @@ class CourseRepo(DSRepo):
         if course:
             return course[0]
 
+    @repomethod(CourseMessage)
+    def updateStatus(self, course_name,status_val):
+        course = self._query().filter(courseName=course_name).update(status=status_val)
+
     @repomethod()
     def updateOrCreate(self, course_name, course_description, price, content_hash='dummy', course_key= 'dummy', author=None,
                        adminApprover=None, approvedAt=None, status='Active', quiz={}):

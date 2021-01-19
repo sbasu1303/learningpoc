@@ -29,6 +29,11 @@ class CourseService(DSServices):
     def getByName(self, courseName):
         return self.courseRepo.getByName(courseName)
 
+    @servicemethod(CourseMessage)
+    def updateStatus(self,course_name,status_val):
+        self.courseRepo.updateStatus(course_name,status_val)
+
+
     @servicemethod()
     def updateOrCreate(self, course_name, course_description, price, content_hash='dummy', course_key= 'dummy', author=None,
                        adminApprover=None, approvedAt=None, status='Active', quiz={}):
