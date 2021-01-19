@@ -23,12 +23,18 @@ def show_home(request, context=None):
     user = request.user
     items = courseService.getall()
     insts = lappUserService.getallInst()
+    lappuser = lappUserService.getByEmailId(request.user.email)
+    print(lappuser)
     context = {
-        'last_name': user.last_name,
+        'last_name': request.user.last_name,
         'courses': items,
-        "instructors":insts
+        'user': lappuser,
+        'instructors':insts
     }
     return render(request, 'home.html', context)
+
+
+
 
 def show_login(request, context=None):
     if request.method == 'GET':
@@ -59,10 +65,13 @@ def show_login(request, context=None):
             login(request, user)
             items = courseService.getall()
             insts = lappUserService.getallInst()
+            lappuser = lappUserService.getByEmailId(user.email)
+            print(lappuser)
             context = {
                 'last_name': user.last_name,
                 'courses': items,
-                "instructors":insts
+                'user': lappuser,
+                'instructors':insts
             }
             ##User is associated with the session
             print(request.user.__dict__)
@@ -72,12 +81,32 @@ def show_login(request, context=None):
         else:
             return HttpResponse("Sorry account not found or password is invalid")
 
+
+
 def show_courses(request, context=None):
-    items = courseService.getall()
-    context = {
-        "items" : items
-    }
-    return render(request, 'courses.html', context)
+    if request.method == "GET":
+        items = courseService.getall()
+        print(items)
+        lappuser = lappUserService.getByEmailId(request.user.email)
+        context = {
+            "items" : items,
+            "user" : lappuser
+        }
+        return render(request, 'courses.html', context)
+
+    else:
+        c_name = request.POST.get("course")
+        c_status = request.POST.get("status")
+        courseService.updateStatus(c_name,c_status)
+        items = courseService.getall()
+        print(items)
+        lappuser = lappUserService.getByEmailId(request.user.email)
+        context = {
+            "items" : items,
+            "user" : lappuser
+        }
+        return render(request, 'courses.html', context)
+
 
 def show_course1(request, context=None):
     c_name = request.GET.get("name")
