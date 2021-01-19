@@ -170,8 +170,9 @@
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Courses</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="courses.html">All Courses</a>
-                                    <a class="dropdown-item" href="course-single-01.html">Course single 01</a>
-                                    <a class="dropdown-item" href="course-single-02.html">Course single 02</a>
+                                    {% for course in courses%}
+                                    <a class="dropdown-item" href="course-single-01.html?name={{course.courseName}}">{{course.courseName}}</a>
+                                    {% endfor %}
                                 </div>
                             </li>
 
@@ -179,7 +180,9 @@
                                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Instructors</a>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="instructors.html">All Instructors</a>
-                                    <a class="dropdown-item" href="instructor-single.html">Instructor Single</a>
+                                    {% for inst in instructors %}
+                                    <a class="dropdown-item" href="instructor-single.html">{{inst.firstname}} {{inst.lastname}}</a>
+                                    {% endfor %}
                                 </div>
                             </li>
 

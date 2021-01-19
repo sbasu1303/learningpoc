@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 import logging
 from DSServices.services import DSServices
 from DSServices.services import servicemethod
+from DSServices.messages import DSMessageList
 # Data Socle Imports Section:
 from user_management.messages import LappUserMessage
 from user_management.repo.lappuser_repo import LappUserRepo
@@ -26,6 +27,10 @@ class LappUserService(DSServices):
     @servicemethod(LappUserMessage)
     def getByEmailId(self, emailId):
         return self.lappUserRepo.getByEmailId(emailId)
+
+    @servicemethod(DSMessageList(LappUserMessage))
+    def getallInst(self):
+        return self.lappUserRepo.getallInst()
 
     @servicemethod()
     def updateOrCreate(self, user_id, firstname, lastname, emailId, street1,street2, city, state,

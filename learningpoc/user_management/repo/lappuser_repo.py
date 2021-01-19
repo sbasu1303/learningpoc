@@ -8,6 +8,7 @@ from DSServices import DSRepo
 from DSServices import repomethod
 # Put Third Party/Django Imports Here:
 from DSServices.exceptions import DSServicesError
+from DSServices.messages import DSMessageList
 # Data Socle Imports Section:
 from user_management.messages import LappUserMessage
 from user_management.models.lappusers import LappUser
@@ -35,6 +36,12 @@ class LappUserRepo(DSRepo):
         lappuser = self._query().filter(emailId=emailId)
         if lappuser:
             return lappuser[0]
+
+
+    @repomethod(DSMessageList(LappUserMessage))
+    def getallInst(self):
+        lappuser = self._query().filter(isInstractor=True)
+        return lappuser
 
     @repomethod()
     def updateOrCreate(self, user_id, firstname, lastname, emailId, street1,street2, city, state,
