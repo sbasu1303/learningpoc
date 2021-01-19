@@ -87,12 +87,19 @@ def show_courses(request, context=None):
     if request.method == "GET":
         items = courseService.getall()
         print(items)
-        lappuser = lappUserService.getByEmailId(request.user.email)
-        context = {
-            "items" : items,
-            "user" : lappuser
-        }
-        return render(request, 'courses.html', context)
+        if request.user.is_anonymous == False:
+            lappuser = lappUserService.getByEmailId(request.user.email)
+            context = {
+                "items" : items,
+                "user" : lappuser
+            }
+            return render(request, 'courses.html', context)
+        else:
+            context = {
+                "items" : items,
+                "user" : request.user
+            }
+            return render(request, 'courses.html', context)
 
     else:
         c_name = request.POST.get("course")
