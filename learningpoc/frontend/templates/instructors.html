@@ -211,126 +211,17 @@
         <div class="section-padding">
             <div class="container">
                 <div class="row">
-
+                    {% for inst in instructors %}
                     <div class="col-md-3 col-sm-6">
                         <div class="instructor">
                             <div class="avatar radius"><img src="static/frontend/images/speakers/1.jpg" alt="Avatar Image"></div><!-- /.avatar -->
                             <div class="instructor-details">
-                                <h3 class="name"><a href="instructor-single.html">Johnny Kennedy</a></h3><!-- /.name -->
-                                <span class="designation">Web Designer</span><!-- /.designation -->
+                                <h3 class="name"><a href="instructor-single.html?emailId={{ inst.emailId }}">{{ inst.firstname }} {{ inst.lastname }}</a></h3><!-- /.name -->
+                                <span class="designation">{{ inst.qualification }}</span><!-- /.designation -->
                             </div><!-- /.instructor-details -->
                         </div><!-- /.instructor -->
                     </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="instructor">
-                            <div class="avatar radius"><img src="static/frontend/images/speakers/2.jpg" alt="Avatar Image"></div><!-- /.avatar -->
-                            <div class="instructor-details">
-                                <h3 class="name"><a href="instructor-single.html">Kathleen Ortiz</a></h3><!-- /.name -->
-                                <span class="designation">Developer</span><!-- /.designation -->
-                            </div><!-- /.instructor-details -->
-                        </div><!-- /.instructor -->
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="instructor">
-                            <div class="avatar radius"><img src="static/frontend/images/speakers/3.jpg" alt="Avatar Image"></div><!-- /.avatar -->
-                            <div class="instructor-details">
-                                <h3 class="name"><a href="instructor-single.html">Louis Fox</a></h3><!-- /.name -->
-                                <span class="designation">UI Designer</span><!-- /.designation -->
-                            </div><!-- /.instructor-details -->
-                        </div><!-- /.instructor -->
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="instructor">
-                            <div class="avatar radius"><img src="static/frontend/images/speakers/4.jpg" alt="Avatar Image"></div><!-- /.avatar -->
-                            <div class="instructor-details">
-                                <h3 class="name"><a href="instructor-single.html">Lauren Day </a></h3><!-- /.name -->
-                                <span class="designation">Web Designer</span><!-- /.designation -->
-                            </div><!-- /.instructor-details -->
-                        </div><!-- /.instructor -->
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="instructor">
-                            <div class="avatar radius"><img src="static/frontend/images/speakers/5.jpg" alt="Avatar Image"></div><!-- /.avatar -->
-                            <div class="instructor-details">
-                                <h3 class="name"><a href="instructor-single.html">Anna Beck</a></h3><!-- /.name -->
-                                <span class="designation">Developer</span><!-- /.designation -->
-                            </div><!-- /.instructor-details -->
-                        </div><!-- /.instructor -->
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="instructor">
-                            <div class="avatar radius"><img src="static/frontend/images/speakers/6.jpg" alt="Avatar Image"></div><!-- /.avatar -->
-                            <div class="instructor-details">
-                                <h3 class="name"><a href="instructor-single.html">Ruth Castro</a></h3><!-- /.name -->
-                                <span class="designation">UI Designer</span><!-- /.designation -->
-                            </div><!-- /.instructor-details -->
-                        </div><!-- /.instructor -->
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="instructor">
-                            <div class="avatar radius"><img src="static/frontend/images/speakers/7.jpg" alt="Avatar Image"></div><!-- /.avatar -->
-                            <div class="instructor-details">
-                                <h3 class="name"><a href="instructor-single.html">Harold Wagner</a></h3><!-- /.name -->
-                                <span class="designation">Web Designer</span><!-- /.designation -->
-                            </div><!-- /.instructor-details -->
-                        </div><!-- /.instructor -->
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="instructor">
-                            <div class="avatar radius"><img src="static/frontend/images/speakers/8.jpg" alt="Avatar Image"></div><!-- /.avatar -->
-                            <div class="instructor-details">
-                                <h3 class="name"><a href="instructor-single.html">Samuel Torres</a></h3><!-- /.name -->
-                                <span class="designation">Developer</span><!-- /.designation -->
-                            </div><!-- /.instructor-details -->
-                        </div><!-- /.instructor -->
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="instructor">
-                            <div class="avatar radius"><img src="static/frontend/images/speakers/1.jpg" alt="Avatar Image"></div><!-- /.avatar -->
-                            <div class="instructor-details">
-                                <h3 class="name"><a href="instructor-single.html">Johnny Kennedy</a></h3><!-- /.name -->
-                                <span class="designation">Web Designer</span><!-- /.designation -->
-                            </div><!-- /.instructor-details -->
-                        </div><!-- /.instructor -->
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="instructor">
-                            <div class="avatar radius"><img src="static/frontend/images/speakers/2.jpg" alt="Avatar Image"></div><!-- /.avatar -->
-                            <div class="instructor-details">
-                                <h3 class="name"><a href="instructor-single.html">Kathleen Ortiz</a></h3><!-- /.name -->
-                                <span class="designation">Developer</span><!-- /.designation -->
-                            </div><!-- /.instructor-details -->
-                        </div><!-- /.instructor -->
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="instructor">
-                            <div class="avatar radius"><img src="static/frontend/images/speakers/3.jpg" alt="Avatar Image"></div><!-- /.avatar -->
-                            <div class="instructor-details">
-                                <h3 class="name"><a href="instructor-single.html">Louis Fox</a></h3><!-- /.name -->
-                                <span class="designation">UI Designer</span><!-- /.designation -->
-                            </div><!-- /.instructor-details -->
-                        </div><!-- /.instructor -->
-                    </div>
-
-                    <div class="col-md-3 col-sm-6">
-                        <div class="instructor">
-                            <div class="avatar radius"><img src="static/frontend/images/speakers/4.jpg" alt="Avatar Image"></div><!-- /.avatar -->
-                            <div class="instructor-details">
-                                <h3 class="name"><a href="instructor-single.html">Lauren Day </a></h3><!-- /.name -->
-                                <span class="designation">Web Designer</span><!-- /.designation -->
-                            </div><!-- /.instructor-details -->
-                        </div><!-- /.instructor -->
-                    </div>
+                    {% endfor %}
                 </div><!-- /.row -->
 
                 <nav aria-label="Page navigation example">
@@ -350,7 +241,7 @@
     </section><!-- /.instructors -->
 
 
-
+    
 
 
     <footer class="site-footer">

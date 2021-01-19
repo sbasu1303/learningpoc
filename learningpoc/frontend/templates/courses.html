@@ -252,7 +252,7 @@
                                         <div class="item-thumb"><img src="static/frontend/images/popular/1.jpg" alt="Item Thumbnail"></div><!-- /.item-thumb -->
                                         <div class="item-details">
                                             <h3 class="item-title"><a href="course-single-01.html?name={{ item.courseName }}">{{ item.courseName }}</a></h3><!-- /.item-title -->
-                                            <span class="instructor"><a href="#">Justin Marks</a></span><!-- /.instructor -->
+                                            <span class="instructor"><a href="#">{{ item.author }}</a></span><!-- /.instructor -->
                                             <div class="details-bottom">
                                                 <div class="course-price float-left"><span class="currency">$</span><span class="price">{{ item.price }}</span></div><!-- /.course-price -->
                                                 <div class="rating float-right">
@@ -285,7 +285,8 @@
                         <aside class="sidebar">
                             <div class="category-list">
                                 <ul>
-                                    <li class="active"><a href="#">All Courses</a></li>
+                                    <li class="active"><a href="add-course.html">Add Course</a></li>
+                                    <li><a href="#">All Courses</a></li>
                                     <li><a href="#">IT & Software</a></li>
                                     <li><a href="#">Development</a></li>
                                     <li><a href="#">Design</a></li>
@@ -293,12 +294,15 @@
                                     <li><a href="#">Photography</a></li>
                                     <li><a href="#">Marketing</a></li>
                                     <li><a href="#">Arts & Music</a></li>
+
                                 </ul>
                             </div>
                         </aside><!-- /.sidebar -->
                     </div>
                 </div><!-- /.row -->
             </div><!-- /.container -->
+
+            
         </div><!-- /.section-padding -->
     </section><!-- /.courses -->
 

@@ -20,6 +20,14 @@ def show_index(request, context=None):
     return render(request, 'index.html', context)
 
 def show_home(request, context=None):
+    user = request.user
+    items = courseService.getall()
+    insts = lappUserService.getallInst()
+    context = {
+        'last_name': user.last_name,
+        'courses': items,
+        "instructors":insts
+    }
     return render(request, 'home.html', context)
 
 def show_login(request, context=None):
@@ -49,8 +57,12 @@ def show_login(request, context=None):
 
         if user is not None and isPass:
             login(request, user)
+            items = courseService.getall()
+            insts = lappUserService.getallInst()
             context = {
-                'last_name': user.last_name
+                'last_name': user.last_name,
+                'courses': items,
+                "instructors":insts
             }
             ##User is associated with the session
             print(request.user.__dict__)
@@ -93,23 +105,23 @@ def show_course2(request, context=None):
     else:
         return HttpResponse("Sorry account not found or password is invalid")
 
-# def check_quiz(request, context=None):
-#         c_name = request.GET.get("name")
-#         course = courseService.getByName(c_name)
-#         course.quiz = course.quiz.replace("'",'"')
-#         course.quiz = json.loads(course.quiz)
-#         context = {
-#             "quiz" : course.quiz,
-#             "course" : course
-#         }
-#         return 
-
 
 def show_instructors(request, context=None):
+
+    insts = lappUserService.getallInst()
+    context = {
+        "instructors" : insts
+    }
     return render(request, 'instructors.html', context)
 
 def show_instructor1(request, context=None):
-    return render(request, 'instructor-single.html', context)
+    if request.method == "GET":
+        email = request.GET.get("emailId")
+        inst = lappUserService.getByEmailId(email)
+        context = {
+        "instructor" : inst
+        }
+        return render(request, 'instructor-single.html', context)
 
 def add_course(request, context=None):
     if request.method == 'POST' and request.user.is_anonymous == False:
