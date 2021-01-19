@@ -5,6 +5,8 @@ from frontend.utils import get_courses
 from crum import get_current_user
 from content_management.services.course_service import courseService
 from user_management.services.lappuser_service import lappUserService
+from user_management.models.lappusers import LappUser
+from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
 import json
 
@@ -108,3 +110,71 @@ def show_instructors(request, context=None):
 
 def show_instructor1(request, context=None):
     return render(request, 'instructor-single.html', context)
+
+def add_course(request, context=None):
+    if request.method == 'POST' and request.user.is_anonymous == False:
+
+        print(request.POST);
+        print(request.FILES);
+        myfile = request.FILES['video']
+        fs = FileSystemStorage()
+        filename = fs.save(request.POST.get("course_name")+".mov", myfile)
+        uploaded_file_url = fs.url(filename)
+        print(uploaded_file_url)
+
+
+        q_list = [];
+        if int(request.POST.get("number")) > 1:
+            for i in range(1,int(request.POST.get("number"))):
+                try :
+                    q = request.POST.get("question " + str(i))
+                    opt1 = request.POST.get("option1 " + str(i));
+                    opt2 = request.POST.get("option2 " + str(i));
+                    opt3 = request.POST.get("option3 " + str(i));
+                    ans = request.POST.get("answer " + str(i));
+                    print(q,opt1,opt2,opt3,ans)
+
+                    if ans == opt1:
+                        ans = "a"
+                    elif ans == opt2:
+                        ans = "b"
+                    else:
+                        ans = "c"
+
+                    quest = {}
+                    quest["question"] = q
+                    quest["correctAnswer"] = ans
+                    options = {}
+                    options["a"] = opt1
+                    options["b"] = opt2
+                    options["c"] = opt3
+                    quest["answers"] = options
+
+                    q_list.append(quest)
+
+                except :
+                    print("deleted")
+
+        print(q_list)
+        luser = LappUser.objects.get(emailId = request.user.email)
+        course=courseService.updateOrCreate(request.POST.get("course_name"),
+                                    request.POST.get("description"),
+                                    author=luser,
+                                    quiz=q_list,price=int(request.POST.get("price")))
+
+        return HttpResponse("created course successfully!!!")
+
+    else:
+        return render(request, 'add-course.html', context)
+
+
+
+
+
+
+
+
+
+
+
+
