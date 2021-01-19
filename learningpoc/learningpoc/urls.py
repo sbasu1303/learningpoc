@@ -33,6 +33,7 @@ urlpatterns = [
     # re_path(r'^check-quiz$', views.check_quiz, name='quiz'),
     re_path(r'^instructors.html$', views.show_instructors, name='instructors'),
     re_path(r'^instructor-single.html$', views.show_instructor1, name='instructor1'),
+    re_path(r'^logout$', views.logout_user, name='logout'),
 ]
 
 if settings.DEBUG:

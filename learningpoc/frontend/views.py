@@ -8,14 +8,18 @@ from user_management.services.lappuser_service import lappUserService
 from user_management.models.lappusers import LappUser
 from django.core.files.storage import FileSystemStorage
 from django.http import HttpResponse
+from django.shortcuts import redirect
 import json
 
 # Create your views here.
 
 def show_index(request, context=None):
     items = courseService.getall()
+    insts = lappUserService.getallInst()
     context = {
-        "items" : items
+        'items' : items,
+        'user': request.user,
+        'instructors':insts
     }
     return render(request, 'index.html', context)
 
@@ -77,7 +81,7 @@ def show_login(request, context=None):
             print(request.user.__dict__)
             ##
             
-            return render(request, 'home.html', context)
+            return render(request, 'index.html', context)
         else:
             return HttpResponse("Sorry account not found or password is invalid")
 
@@ -86,9 +90,10 @@ def show_login(request, context=None):
 def show_courses(request, context=None):
     if request.method == "GET":
         items = courseService.getall()
-        print(items)
+        print(request.user)
         if request.user.is_anonymous == False:
             lappuser = lappUserService.getByEmailId(request.user.email)
+            print(lappuser.isInstractor,"tttt")
             context = {
                 "items" : items,
                 "user" : lappuser
@@ -130,6 +135,7 @@ def show_course2(request, context=None):
         c_name = request.GET.get("name")
         course = courseService.getByName(c_name)
         # print(type(course.quiz))
+        print(course.quiz)
         course.quiz = course.quiz.replace("'", '"')
         course.quiz = json.loads(course.quiz)
         context = {
@@ -210,10 +216,17 @@ def add_course(request, context=None):
                                     author=luser,
                                     quiz=q_list,price=int(request.POST.get("price")))
 
-        return HttpResponse("created course successfully!!!")
+        response = redirect('/course-single-01.html?name='+request.POST.get("course_name"))
+        return response
 
     else:
         return render(request, 'add-course.html', context)
+
+def logout_user(request,context=None):
+    if request.method == "GET":
+        logout(request)
+        response = redirect('/index.html')
+        return response
 
 
 

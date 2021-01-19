@@ -344,8 +344,12 @@
                         <aside class="sidebar">
                             <div class="category-list">
                                 <ul>
+                                    {% if user.isInstractor %}
                                     <li class="active"><a href="add-course.html">Add Course</a></li>
                                     <li><a href="#">All Courses</a></li>
+                                    {% else %}
+                                    <li class="active"><a href="#">All Courses</a></li>
+                                    {% endif %}
                                     <li><a href="#">IT & Software</a></li>
                                     <li><a href="#">Development</a></li>
                                     <li><a href="#">Design</a></li>
