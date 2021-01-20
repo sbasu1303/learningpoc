@@ -9,6 +9,9 @@ luser=lappUserService.updateOrCreate( user_id=user.id, firstname='adminuser', la
                                       city='city', state='state', country='country', zip_pin='zip_pin',
                                       qualification='Administrator', isInstractor=True,
                                       isContentAdmin=True, isLearner=True)
+
+
+
 print (luser.__dict__)
 
 luser=lappUserService.getByEmailId('admin@testlearn.com')

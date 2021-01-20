@@ -1,13 +1,12 @@
 from django.contrib.auth.models import User
-user = User.objects.create_user('Mak', 'mak@testlearn.com', 'vish123')
-user.last_name = 'mak'
+user = User.objects.create_user('John', 'john@goodlearning.com', 'john123')
+user.last_name = 'Bartlet'
 user.save()
 
 from user_management.models.lappusers import LappUser
-luser=LappUser.objects.create(user=user,firstname='Mak',lastname='menon',emailId='mak@datasocle.com',
-                        street1='abc', street2='bca', city='dba', state='pal', country='India',
-                        zip_pin=100100, qualification='btech',status='Active',isInstractor=True)
-
+luser=LappUser.objects.create(user=user,firstname='John',lastname='Bartlet',emailId='john@.goodlearning.com',
+                        street1='7922', street2='5Th Avenue', city='Brooklyn', state='New York', country='USA',
+                        zip_pin=100100, qualification='B.Tech',status='Active',isInstractor=True)
 
 quiz =  [
       {
@@ -41,10 +40,9 @@ quiz =  [
     ]
     
 from content_management.services.course_service import courseService
-course=courseService.updateOrCreate('first course',
-                                    'first course has a lot of description',
-                                    author=luser,
-                                    quiz=quiz,price=10.00)
+course=courseService.updateOrCreate('JavaScript',
+                                    'JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. While it is most well-known as the scripting language for Web pages, many non-browser environments also use it, such as Node.js, Apache CouchDB and Adobe Acrobat.',
+                                    author=luser, quiz=quiz, price=12.99)
 print(course.__dict__)
 
 from content_management.services.course_service import courseService
