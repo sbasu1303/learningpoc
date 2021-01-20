@@ -16,26 +16,30 @@ import json
 def show_index(request, context=None):
     items = courseService.getall()
     insts = lappUserService.getallInst()
+    last_name = ''
+    if request.user.is_anonymous == False:
+        last_name = request.user.last_name
     context = {
+        'last_name': last_name,
         'items' : items,
         'user': request.user,
         'instructors':insts
     }
     return render(request, 'index.html', context)
 
-def show_home(request, context=None):
-    user = request.user
-    items = courseService.getall()
-    insts = lappUserService.getallInst()
-    lappuser = lappUserService.getByEmailId(request.user.email)
-    print(lappuser)
-    context = {
-        'last_name': request.user.last_name,
-        'courses': items,
-        'user': lappuser,
-        'instructors':insts
-    }
-    return render(request, 'home.html', context)
+# def show_home(request, context=None):
+#     user = request.user
+#     items = courseService.getall()
+#     insts = lappUserService.getallInst()
+#     lappuser = lappUserService.getByEmailId(request.user.email)
+#     print(lappuser)
+#     context = {
+#         'last_name': request.user.last_name,
+#         'courses': items,
+#         'user': lappuser,
+#         'instructors':insts
+#     }
+#     return render(request, 'home.html', context)
 
 
 
@@ -67,21 +71,22 @@ def show_login(request, context=None):
 
         if user is not None and isPass:
             login(request, user)
-            items = courseService.getall()
-            insts = lappUserService.getallInst()
-            lappuser = lappUserService.getByEmailId(user.email)
-            print(lappuser)
-            context = {
-                'last_name': user.last_name,
-                'courses': items,
-                'user': lappuser,
-                'instructors':insts
-            }
-            ##User is associated with the session
-            print(request.user.__dict__)
+            # items = courseService.getall()
+            # insts = lappUserService.getallInst()
+            # lappuser = lappUserService.getByEmailId(user.email)
+            # print(lappuser)
+            # context = {
+            #     'last_name': user.last_name,
+            #     'courses': items,
+            #     'user': lappuser,
+            #     'instructors':insts
+            # }
+            # ##User is associated with the session
+            # print(request.user.__dict__)
             ##
             
-            return render(request, 'index.html', context)
+            response = redirect('/index.html')
+            return response
         else:
             return HttpResponse("Sorry account not found or password is invalid")
 
@@ -229,9 +234,12 @@ def logout_user(request,context=None):
         return response
 
 def error404(request,context=None):
+
+    #return render(request, 'coming-soon.html', context)
     return HttpResponse("This page does not exist.")
 
 def error500(request,context=None):
+    #return render(request, 'faq.html', context)
     return HttpResponse("There was some error, please try again.")
 
 

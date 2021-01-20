@@ -34,7 +34,7 @@
                 else {
                     document.open();
                     document.write(response);
-                    window.history.pushState('data', 'Title', "home.html");
+                    window.history.pushState('data', 'Title', "index.html");
                     document.close();
                 }
             },
