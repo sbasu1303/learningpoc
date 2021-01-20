@@ -156,7 +156,7 @@ if ENV == 'PROD':
 
 # SECURITY WARNING: don't run with debug turned on in production!
 if ENV in ['LOCAL', 'DEV']:
-    DEBUG = True
+    DEBUG = False
 else:
     DEBUG = False
 
