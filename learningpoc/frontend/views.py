@@ -177,8 +177,10 @@ def add_course(request, context=None):
         print(request.POST);
         print(request.FILES);
         myfile = request.FILES['video']
+        myimage = request.FILES['image']
         fs = FileSystemStorage()
         filename = fs.save(request.POST.get("course_name")+".mov", myfile)
+        imagename = fs.save(request.POST.get("course_name")+".jpg", myimage)
         uploaded_file_url = fs.url(filename)
         print(uploaded_file_url)
 
@@ -220,7 +222,7 @@ def add_course(request, context=None):
         course=courseService.updateOrCreate(request.POST.get("course_name"),
                                     request.POST.get("description"),
                                     author=luser,
-                                    quiz=q_list,price=int(request.POST.get("price")))
+                                    quiz=q_list,price=float(request.POST.get("price")))
 
         response = redirect('/course-single-01.html?name='+request.POST.get("course_name"))
         return response

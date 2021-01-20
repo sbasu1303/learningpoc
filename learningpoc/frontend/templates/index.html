@@ -52,9 +52,13 @@
                             <div class="contacts">
                                 <span><i class="fas fa-phone"></i> <a href="tel:61383766284">(+61) 38376 6284</a></span>
                                 <span><i class="fas fa-envelope"></i> <a href="#">support@goodlearning.com</a></span>
-                                {% if last_name%}
-                                <b> Welcome {{last_name}} </b>
-                                {% endif %}
+                            {% if last_name and user.isInstractor %}
+                            <b> Welcome {{last_name}} (Instructor) </b>
+                            {% elif last_name and user.isContentAdmin%}
+                            <b> Welcome {{last_name}} (Administrator) </b>
+                            {% elif last_name %}
+                            <b> welcome {{last_name}} (Student) </b>
+                            {% endif %}
                             </div>
                         </div>
                     </div>
@@ -221,8 +225,8 @@
                         {% for item in items %}
                         <div class="item">
                             <div class="item-thumb">
-                                <img src="static/frontend/images/popular/courselogo1.jpg" alt="Item Thumbnail">
-                                <div class="avatar"><img class="rounded-circle" src="static/frontend/images/avatar/i1.png" alt="Avatar Image"></div><!-- /.avatar -->
+                                <img src="media/{{ item.courseName }}.jpg" alt="Item Thumbnail">
+                                <div class="avatar"><img class="rounded-circle" src="static/frontend/images/speakers/{{ item.author }}.jpg" alt="Avatar Image"></div><!-- /.avatar -->
                             </div><!-- /.item-thumb -->
                             <div class="item-details">
                                 <h3 class="item-title"><a href="course-single-01.html?name={{ item.courseName }}">{{ item.courseName }}</a></h3><!-- /.item-title -->
