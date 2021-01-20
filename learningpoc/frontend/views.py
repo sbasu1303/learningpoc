@@ -98,7 +98,8 @@ def show_courses(request, context=None):
         print(request.user)
         if request.user.is_anonymous == False:
             lappuser = lappUserService.getByEmailId(request.user.email)
-            print(lappuser.isInstractor,"tttt")
+            print(lappuser)
+            #print(lappuser.isInstractor,"tttt")
             context = {
                 "items" : items,
                 "user" : lappuser
