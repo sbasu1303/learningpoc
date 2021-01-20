@@ -250,7 +250,7 @@
                                 {% for item in items %}
                                  <div class="col-lg-4 col-md-6">
                                     <div class="item">
-                                        <div class="item-thumb"><img src="static/frontend/images/popular/courselogo1.jpg" alt="Item Thumbnail"></div><!-- /.item-thumb -->
+                                        <div class="item-thumb"><img src="media/{{ item.courseName }}.jpg" alt="Item Thumbnail"></div><!-- /.item-thumb -->
                                         <div class="item-details">
                                             <h3 class="item-title"><a href="course-single-01.html?name={{ item.courseName }}">{{ item.courseName }}</a></h3><!-- /.item-title -->
                                             <span class="instructor"><a href="#">{{ item.author }}</a></span><!-- /.instructor -->
@@ -307,7 +307,7 @@
                                 {% for item in items %}
                                 <div class="col-lg-4 col-md-6">
                                     <div class="item">
-                                        <div class="item-thumb"><img src="static/frontend/images/popular/courselogo1.jpg" alt="Item Thumbnail"></div><!-- /.item-thumb -->
+                                        <div class="item-thumb"><img src="media/{{ item.courseName }}.jpg" alt="Item Thumbnail"></div><!-- /.item-thumb -->
                                         <div class="item-details">
                                             <h3 class="item-title"><a href="course-single-01.html?name={{ item.courseName }}">{{ item.courseName }}</a></h3><!-- /.item-title -->
                                             <span class="instructor"><a href="#">{{ item.author }}</a></span><!-- /.instructor -->
