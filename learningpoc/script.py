@@ -5,7 +5,7 @@ user.last_name = 'Bartlet'
 user.save()
 
 from user_management.models.lappusers import LappUser
-luser=LappUser.objects.create(user=user,firstname='John',lastname='Bartlet',emailId='john@.goodlearning.com',
+luser=LappUser.objects.create(user=user,firstname='John',lastname='Bartlet',emailId='john@goodlearning.com',
                         street1='7922', street2='5Th Avenue', city='Brooklyn', state='New York', country='USA',
                         zip_pin=100100, qualification='B.Tech',status='Active', isInstractor=True, isContentAdmin=False, isLearner=True)
 
@@ -87,7 +87,7 @@ user = User.objects.create_user('Jessica', 'jessica@goodlearning.com', 'jessica1
 user.last_name = 'Kovler'
 user.save()
 
-luser=LappUser.objects.create(user=user,firstname='Jessica',lastname='Kovler',emailId='jessica@.goodlearning.com',
+luser=LappUser.objects.create(user=user,firstname='Jessica',lastname='Kovler',emailId='jessica@goodlearning.com',
                         street1='7922', street2='10Th Avenue', city='Durban', state='KwaZuku-Natal', country='South Africa',
                         zip_pin=121100, qualification='M.Tech',status='Active', isInstractor=True, isContentAdmin=False, isLearner=True)
 
@@ -167,7 +167,7 @@ user = User.objects.create_user('Alan', 'alan@goodlearning.com', 'alan123')
 user.last_name = 'Whiteside'
 user.save()
 
-luser=LappUser.objects.create(user=user,firstname='Alan',lastname='Whiteside',emailId='alan@.goodlearning.com',
+luser=LappUser.objects.create(user=user,firstname='Alan',lastname='Whiteside',emailId='alan@goodlearning.com',
                         street1='7922', street2='20Th Cross', city='Durban', state='KwaZulu-Natal', country='South Africa',
                         zip_pin=900100, qualification='Phd',status='Active', isInstractor=False, isContentAdmin=False, isLearner=True)
 
@@ -176,7 +176,7 @@ user = User.objects.create_user('Shirley', 'shirley@goodlearning.com', 'shirley1
 user.last_name = 'Williams'
 user.save()
 
-luser=LappUser.objects.create(user=user,firstname='Shirley',lastname='Williams',emailId='shirley@.goodlearning.com',
+luser=LappUser.objects.create(user=user,firstname='Shirley',lastname='Williams',emailId='shirley@goodlearning.com',
                         street1='9022', street2='5Th Street', city='Melbourne', state='Victoria', country='Australia',
                         zip_pin=700100, qualification='12th',status='Active', isInstractor=False, isContentAdmin=False, isLearner=True)
 
@@ -187,7 +187,7 @@ user = User.objects.create_user('Vishnu', 'vishnu@goodlearning.com', 'vishnu123'
 user.last_name = 'Menon'
 user.save()
 
-luser=LappUser.objects.create(user=user,firstname='Vishnu',lastname='Menon',emailId='vishnu@.goodlearning.com',
+luser=LappUser.objects.create(user=user,firstname='Vishnu',lastname='Menon',emailId='vishnu@goodlearning.com',
                         street1='7807', street2='7th Spaces', city='Bangalore', state='Karnataka', country='India',
                         zip_pin=561001, qualification='B.Tech',status='Active', isInstractor=False, isContentAdmin=True, isLearner=False)
 
@@ -197,7 +197,7 @@ user = User.objects.create_user('Satrajit', 'satrajit@goodlearning.com', 'satraj
 user.last_name = 'Basu'
 user.save()
 
-luser=LappUser.objects.create(user=user,firstname='Satrajit',lastname='Basu',emailId='satrajit@.goodlearning.com',
+luser=LappUser.objects.create(user=user,firstname='Satrajit',lastname='Basu',emailId='satrajit@goodlearning.com',
                         street1='7807', street2='7th Spaces', city='Bangalore', state='Karnataka', country='India',
                         zip_pin=561001, qualification='M.Tech',status='Active', isInstractor=False, isContentAdmin=True, isLearner=False)
 
