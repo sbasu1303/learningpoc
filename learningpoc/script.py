@@ -1,12 +1,12 @@
 #Instructor1
 from django.contrib.auth.models import User
 user = User.objects.create_user('John', 'john@goodlearning.com', 'john123')
-user.last_name = 'Bartlet'
+user.last_name = 'Ogbu'
 user.save()
 
 from user_management.models.lappusers import LappUser
-luser=LappUser.objects.create(user=user,firstname='John',lastname='Bartlet',emailId='john@goodlearning.com',
-                        street1='7922', street2='5Th Avenue', city='Brooklyn', state='New York', country='USA',
+luser=LappUser.objects.create(user=user,firstname='John',lastname='Ogbu',emailId='john@goodlearning.com',
+                        street1='7922', street2='5Th Avenue', city='Durban', state='KwaZuku-Natal', country='South Africa',
                         zip_pin=100100, qualification='B.Tech',status='Active', isInstractor=True, isContentAdmin=False, isLearner=True)
 
 quiz =  [
@@ -83,11 +83,11 @@ course=courseService.updateOrCreate('Data Science',
                                     author=luser, quiz=quiz, price=18.99)
 
 #Instructor2
-user = User.objects.create_user('Jessica', 'jessica@goodlearning.com', 'jessica123')
-user.last_name = 'Kovler'
+user = User.objects.create_user('Gabrielle', 'gabrielle@goodlearning.com', 'gabrielle123')
+user.last_name = 'Starr'
 user.save()
 
-luser=LappUser.objects.create(user=user,firstname='Jessica',lastname='Kovler',emailId='jessica@goodlearning.com',
+luser=LappUser.objects.create(user=user,firstname='Gabrielle',lastname='Starr',emailId='gabrielle@goodlearning.com',
                         street1='7922', street2='10Th Avenue', city='Durban', state='KwaZuku-Natal', country='South Africa',
                         zip_pin=121100, qualification='M.Tech',status='Active', isInstractor=True, isContentAdmin=False, isLearner=True)
 
