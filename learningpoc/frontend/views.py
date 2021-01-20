@@ -17,12 +17,15 @@ def show_index(request, context=None):
     items = courseService.getall()
     insts = lappUserService.getallInst()
     last_name = ''
+    user = request.user
     if request.user.is_anonymous == False:
         last_name = request.user.last_name
+        lappuser = lappUserService.getByEmailId(user.email)
+        user = lappuser
     context = {
         'last_name': last_name,
         'items' : items,
-        'user': request.user,
+        'user': user,
         'instructors':insts
     }
     return render(request, 'index.html', context)
