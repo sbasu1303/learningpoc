@@ -228,7 +228,11 @@ def logout_user(request,context=None):
         response = redirect('/index.html')
         return response
 
+def error404(request,context=None):
+    return HttpResponse("This page does not exist.")
 
+def error500(request,context=None):
+    return HttpResponse("There was some error, please try again.")
 
 
 
