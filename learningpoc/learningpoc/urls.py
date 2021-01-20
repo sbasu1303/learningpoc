@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     re_path(r'^$', views.show_index, name='home'),
     re_path(r'^index.html$', views.show_index, name='home'),
-    re_path(r'^home.html$', views.show_home, name='loggedinhome'),
+    # re_path(r'^home.html$', views.show_home, name='loggedinhome'),
     re_path(r'^login.html$', views.show_login, name='login'),
     re_path(r'^courses.html$', views.show_courses, name='courses'),
     re_path(r'^course-single-01.html$', views.show_course1, name='course1'),
