@@ -52,9 +52,9 @@
                             <div class="contacts">
                                 <span><i class="fas fa-phone"></i> <a href="tel:61383766284">(+61) 38376 6284</a></span>
                                 <span><i class="fas fa-envelope"></i> <a href="#">support@goodlearning.com</a></span>
-                            {% if last_name and user.isInstractor %}
+                            {% if user.isInstractor %}
                             <b> Welcome {{last_name}} (Instructor) </b>
-                            {% elif last_name and user.isContentAdmin%}
+                            {% elif user.isContentAdmin%}
                             <b> Welcome {{last_name}} (Administrator) </b>
                             {% elif last_name %}
                             <b> welcome {{last_name}} (Student) </b>
