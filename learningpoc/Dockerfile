@@ -93,5 +93,10 @@ RUN mkdir -p $APP_DIR/logs/uwgsi
 COPY . /usr/src/app
 RUN rm -rf $APP_DIR/.git
 RUN rm -f $APP_DIR/.gitignore
+RUN pip3 install uwsgi
+ADD requirements.txt $APP_DIR/
+RUN CFLAGS="-std=c99 -D__USE_MISC" pip3 install --no-cache-dir -r $APP_DIR/requirements.txt
+RUN chmod +x $APP_DIR/start_lapp.sh
 
 RUN mkdir -p $APP_DIR/media
+CMD ["/usr/src/app/start_lapp.sh"]

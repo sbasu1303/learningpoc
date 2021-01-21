@@ -94,6 +94,11 @@ databasePort = '3306'
 if ENV != 'LOCAL':
     databaseHost = 'host.docker.internal'
 
+if ENV == 'PROD':
+    databaseHost='private-ds-db-mysql-nyc1-20849-do-user-7642519-0.a.db.ondigitalocean.com'
+    databasePassword = 'ltevy65htq7l6wxg'
+    databasePort = '25060'
+
 DATABASE_APPS_MAPPING = {
     'content_management' : 'learning_course_db',
     'user_management' : 'learning_course_db'

@@ -36,8 +36,8 @@ urlpatterns = [
     re_path(r'^logout$', views.logout_user, name='logout'),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#if settings.DEBUG:
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'frontend.views.error404'
 handler500 = 'frontend.views.error500'

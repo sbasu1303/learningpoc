@@ -9,9 +9,19 @@ if [ "$DS_ENV" == "LOCAL" ]; then
   export BASE_LOG_DIR=`pwd`'/logs'
 else
   export PROJ_PATH='/usr/src/app'
-  export BASE_LOG_DIR='/var/logs'
+  export BASE_LOG_DIR='/var/log'
 fi
-mkdir -p "$BASE_LOG_DIR""/ds_django"
+function fix_linux_internal_host() {
+DOCKER_INTERNAL_HOST="host.docker.internal"
+if ! grep $DOCKER_INTERNAL_HOST /etc/hosts > /dev/null ; then
+DOCKER_INTERNAL_IP=`/sbin/ip route | awk '/default/ { print $3 }' | awk '!seen[$0]++'`
+echo -e "$DOCKER_INTERNAL_IP\t$DOCKER_INTERNAL_HOST" | tee -a /etc/hosts > /dev/null
+echo "Added $DOCKER_INTERNAL_HOST to hosts /etc/hosts"
+fi
+}
+fix_linux_internal_host
+
+mkdir -p "$BASE_LOG_DIR""/ln_django"
 mkdir -p "$BASE_LOG_DIR""/uwsgi"
 ps -ef | grep celery | grep -v grep | awk '{print $2}' | xargs kill -9
 ps -ef | grep uwsgi | grep -v grep | awk '{print $2}'|xargs kill -9
@@ -27,4 +37,4 @@ systemctl enable cron
 
 $PROJ_PATH/celery_beat.sh &
 $PROJ_PATH/celery_worker.sh &
-uwsgi --static-map /static=$PROJ_PATH/static --ini $PROJ_PATH/uwsgi.ini #--daemonize "$BASE_LOG_DIR""/uwsgi/uwsgi.log"
+uwsgi --static-map /media=$PROJ_PATH/media --static-map /static=$PROJ_PATH/static --ini $PROJ_PATH/uwsgi.ini #--daemonize "$BASE_LOG_DIR""/uwsgi/uwsgi.log"
