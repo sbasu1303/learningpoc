@@ -4,10 +4,22 @@
 #
 #    pip-compile requirements.txt
 #
+amqp==5.0.2
+    # via
+    #   -r requirements.txt
+    #   kombu
+appnope==0.1.2
+    # via
+    #   -r requirements.txt
+    #   ipython
 asgiref==3.3.1
     # via
     #   -r requirements.txt
     #   django
+backcall==0.2.0
+    # via
+    #   -r requirements.txt
+    #   ipython
 boto3==1.16.51
     # via -r requirements.txt
 botocore==1.19.51
@@ -27,11 +39,21 @@ click==7.1.2
     # via
     #   -r requirements.txt
     #   pip-tools
+decorator==4.4.2
+    # via
+    #   -r requirements.txt
+    #   ipython
+django-cors-headers==3.6.0
+    # via -r requirements.txt
+django-crum==0.7.9
+    # via -r requirements.txt
 django-mysql==3.10.0
     # via -r requirements.txt
 django==3.1.5
     # via
     #   -r requirements.txt
+    #   django-cors-headers
+    #   django-crum
     #   django-mysql
 docker-py==1.10.6
     # via -r requirements.txt
@@ -45,19 +67,49 @@ idna==2.10
     # via
     #   -r requirements.txt
     #   requests
+ipython-genutils==0.2.0
+    # via
+    #   -r requirements.txt
+    #   traitlets
+ipython==7.19.0
+    # via -r requirements.txt
 isort==5.7.0
     # via -r requirements.txt
+jedi==0.18.0
+    # via
+    #   -r requirements.txt
+    #   ipython
 jmespath==0.10.0
     # via
     #   -r requirements.txt
     #   boto3
     #   botocore
+kombu==5.0.2
+    # via -r requirements.txt
+lxml==4.6.2
+    # via -r requirements.txt
 mysql-connector-python==8.0.22
     # via -r requirements.txt
 mysqlclient==2.0.3
     # via -r requirements.txt
+parso==0.8.1
+    # via
+    #   -r requirements.txt
+    #   jedi
+pexpect==4.8.0
+    # via
+    #   -r requirements.txt
+    #   ipython
+pickleshare==0.7.5
+    # via
+    #   -r requirements.txt
+    #   ipython
 pip-tools==5.5.0
     # via -r requirements.txt
+prompt-toolkit==3.0.10
+    # via
+    #   -r requirements.txt
+    #   ipython
 protobuf3-to-dict==0.1.5
     # via -r requirements.txt
 protobuf3==0.2.1
@@ -67,10 +119,18 @@ protobuf==3.14.0
     #   -r requirements.txt
     #   mysql-connector-python
     #   protobuf3-to-dict
+ptyprocess==0.7.0
+    # via
+    #   -r requirements.txt
+    #   pexpect
 pydantic==1.7.3
     # via
     #   -r requirements.txt
     #   fastapi
+pygments==2.7.3
+    # via
+    #   -r requirements.txt
+    #   ipython
 python-dateutil==2.8.1
     # via
     #   -r requirements.txt
@@ -79,6 +139,8 @@ pytz==2020.5
     # via
     #   -r requirements.txt
     #   django
+pyyaml==5.3.1
+    # via -r requirements.txt
 requests==2.25.1
     # via
     #   -r requirements.txt
@@ -104,6 +166,10 @@ starlette==0.13.6
     # via
     #   -r requirements.txt
     #   fastapi
+traitlets==5.0.5
+    # via
+    #   -r requirements.txt
+    #   ipython
 urllib3==1.26.2
     # via
     #   -r requirements.txt
@@ -111,6 +177,14 @@ urllib3==1.26.2
     #   requests
 uwsgi==2.0.19.1
     # via -r requirements.txt
+vine==5.0.0
+    # via
+    #   -r requirements.txt
+    #   amqp
+wcwidth==0.2.5
+    # via
+    #   -r requirements.txt
+    #   prompt-toolkit
 websocket-client==0.57.0
     # via
     #   -r requirements.txt
@@ -118,3 +192,4 @@ websocket-client==0.57.0
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
+# setuptools
